@@ -1,0 +1,403 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/Highlighting/InspectionSeverities/=MemberCanBeProtected_002EGlobal/@EntryIndexedValue">HINT</s:String>
+	<s:String x:Key="/Default/CodeInspection/Highlighting/InspectionSeverities/=StringLiteralTypo/@EntryIndexedValue">HINT</s:String>
+	<s:String x:Key="/Default/CodeStyle/CodeCleanup/Profiles/=OpenEverything_0020Cleanup/@EntryIndexedValue">&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;Profile name="OpenEverything Cleanup"&gt;&lt;CSArrangeThisQualifier&gt;True&lt;/CSArrangeThisQualifier&gt;&lt;RemoveCodeRedundancies&gt;True&lt;/RemoveCodeRedundancies&gt;&lt;CSUseAutoProperty&gt;True&lt;/CSUseAutoProperty&gt;&lt;CSMakeFieldReadonly&gt;True&lt;/CSMakeFieldReadonly&gt;&lt;CSUseVar&gt;&lt;BehavourStyle&gt;CAN_CHANGE_TO_IMPLICIT&lt;/BehavourStyle&gt;&lt;LocalVariableStyle&gt;ALWAYS_IMPLICIT&lt;/LocalVariableStyle&gt;&lt;ForeachVariableStyle&gt;ALWAYS_IMPLICIT&lt;/ForeachVariableStyle&gt;&lt;/CSUseVar&gt;&lt;CSOptimizeUsings&gt;&lt;OptimizeUsings&gt;True&lt;/OptimizeUsings&gt;&lt;EmbraceInRegion&gt;False&lt;/EmbraceInRegion&gt;&lt;RegionName&gt;&lt;/RegionName&gt;&lt;/CSOptimizeUsings&gt;&lt;CSShortenReferences&gt;True&lt;/CSShortenReferences&gt;&lt;CSReformatCode&gt;True&lt;/CSReformatCode&gt;&lt;CSharpFormatDocComments&gt;True&lt;/CSharpFormatDocComments&gt;&lt;CSReorderTypeMembers&gt;True&lt;/CSReorderTypeMembers&gt;&lt;/Profile&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/CodeCleanup/SilentCleanupProfile/@EntryValue">OpenEverything Cleanup</s:String>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/ALIGN_FIRST_ARG_BY_PAREN/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/ALIGN_LINQ_QUERY/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/ALIGN_MULTILINE_ARGUMENT/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/ALIGN_MULTILINE_ARRAY_AND_OBJECT_INITIALIZER/@EntryValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/ALIGN_MULTILINE_CALLS_CHAIN/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/ALIGN_MULTILINE_EXPRESSION/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/ALIGN_MULTILINE_EXTENDS_LIST/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/ALIGN_MULTILINE_FOR_STMT/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/ALIGN_MULTILINE_PARAMETER/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/ALIGN_MULTIPLE_DECLARATION/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/ALIGN_MULTLINE_TYPE_PARAMETER_CONSTRAINS/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/ALIGN_MULTLINE_TYPE_PARAMETER_LIST/@EntryValue">True</s:Boolean>
+	<s:Int64 x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/BLANK_LINES_AROUND_FIELD/@EntryValue">1</s:Int64>
+	<s:String x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/FORCE_ATTRIBUTE_STYLE/@EntryValue">JOIN</s:String>
+	<s:String x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/FORCE_FIXED_BRACES_STYLE/@EntryValue">ALWAYS_ADD</s:String>
+	<s:String x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/FORCE_FOR_BRACES_STYLE/@EntryValue">ALWAYS_REMOVE</s:String>
+	<s:String x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/FORCE_FOREACH_BRACES_STYLE/@EntryValue">ALWAYS_REMOVE</s:String>
+	<s:String x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/FORCE_IFELSE_BRACES_STYLE/@EntryValue">ALWAYS_REMOVE</s:String>
+	<s:String x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/FORCE_USING_BRACES_STYLE/@EntryValue">ALWAYS_REMOVE</s:String>
+	<s:String x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/FORCE_WHILE_BRACES_STYLE/@EntryValue">ALWAYS_REMOVE</s:String>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/INDENT_ANONYMOUS_METHOD_BLOCK/@EntryValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/LINE_FEED_AT_FILE_END/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/PLACE_WHILE_ON_NEW_LINE/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/SIMPLE_EMBEDDED_BLOCK_STYLE/@EntryValue">DO_NOT_CHANGE</s:String>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/SPACE_AFTER_TYPECAST_PARENTHESES/@EntryValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/EXPLICIT_PRIVATE_MODIFIER/@EntryValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/EXPLICIT_INTERNAL_MODIFIER/@EntryValue">False</s:Boolean>
+	<s:Int64 x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/BLANK_LINES_INSIDE_REGION/@EntryValue">0</s:Int64>
+	<s:String x:Key="/Default/CodeInspection/Highlighting/AnalysisEnabled/@EntryValue">SOLUTION</s:String>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/SPACE_AROUND_MULTIPLICATIVE_OP/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/SPACE_BEFORE_SIZEOF_PARENTHESES/@EntryValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/SPACE_BEFORE_TYPEOF_PARENTHESES/@EntryValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/SPACE_WITHIN_SINGLE_LINE_ARRAY_INITIALIZER_BRACES/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/STICK_COMMENT/@EntryValue">False</s:Boolean>
+	<s:String x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/WRAP_ARGUMENTS_STYLE/@EntryValue">CHOP_IF_LONG</s:String>
+	<s:String x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/WRAP_EXTENDS_LIST_STYLE/@EntryValue">CHOP_IF_LONG</s:String>
+	<s:Int64 x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/WRAP_LIMIT/@EntryValue">120</s:Int64>
+	<s:String x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/WRAP_PARAMETERS_STYLE/@EntryValue">CHOP_IF_LONG</s:String>
+	<s:String x:Key="/Default/CodeStyle/CSharpMemberOrderPattern/CustomPattern/@EntryValue">&lt;Patterns xmlns="urn:shemas-jetbrains-com:member-reordering-patterns"&gt;&#xD;
+&#xD;
+    &lt;!-- Do not reorder COM interfaces --&gt;&#xD;
+    &lt;Pattern&gt;&#xD;
+        &lt;Match&gt;&#xD;
+            &lt;And Weight="2000"&gt;&#xD;
+                &lt;Kind Is="interface"/&gt;&#xD;
+                &lt;HasAttribute CLRName="System.Runtime.InteropServices.InterfaceTypeAttribute"&#xD;
+                              Inherit="true"/&gt;&#xD;
+            &lt;/And&gt;&#xD;
+        &lt;/Match&gt;&#xD;
+    &lt;/Pattern&gt;&#xD;
+&#xD;
+    &lt;!-- Do not reorder P/Invoke structs --&gt;&#xD;
+    &lt;Pattern&gt;&#xD;
+        &lt;Match&gt;&#xD;
+            &lt;And Weight="2000"&gt;&#xD;
+                &lt;Or&gt;&#xD;
+                    &lt;Kind Is="struct"/&gt;&#xD;
+                    &lt;Kind Is="class"/&gt;&#xD;
+                &lt;/Or&gt;&#xD;
+                &lt;HasAttribute CLRName="System.Runtime.InteropServices.StructLayoutAttribute"&#xD;
+                              Inherit="true"/&gt;&#xD;
+            &lt;/And&gt;&#xD;
+        &lt;/Match&gt;&#xD;
+    &lt;/Pattern&gt;&#xD;
+&#xD;
+    &lt;!-- Do not reorder P/Invoke classes (called xxxNativeMethods) --&gt;&#xD;
+    &lt;Pattern&gt;&#xD;
+        &lt;Match&gt;&#xD;
+            &lt;And Weight="2000"&gt;&#xD;
+                &lt;Kind Is="class"/&gt;&#xD;
+                &lt;Name Is=".*NativeMethods" /&gt;&#xD;
+            &lt;/And&gt;&#xD;
+        &lt;/Match&gt;&#xD;
+    &lt;/Pattern&gt;&#xD;
+&#xD;
+    &lt;!-- StyleCop pattern --&gt;&#xD;
+    &lt;Pattern RemoveAllRegions="true"&gt;&#xD;
+        &lt;Match&gt;&#xD;
+            &lt;Or Weight="1000" &gt;&#xD;
+                &lt;Kind Is="class" /&gt;&#xD;
+                &lt;Kind Is="struct" /&gt;&#xD;
+            &lt;/Or&gt;&#xD;
+        &lt;/Match&gt;&#xD;
+&#xD;
+        &lt;!-- constants and fields --&gt;&#xD;
+        &lt;Entry&gt;&#xD;
+            &lt;Match&gt;&#xD;
+                &lt;Or&gt;&#xD;
+                    &lt;Kind Is="constant"/&gt;&#xD;
+                    &lt;Kind Is="field"/&gt;&#xD;
+                &lt;/Or&gt;&#xD;
+            &lt;/Match&gt;&#xD;
+            &lt;Sort&gt;&#xD;
+                &lt;Access Order="public internal protected-internal protected private"/&gt;&#xD;
+                &lt;Kind Order="constant field"/&gt;&#xD;
+                &lt;Readonly/&gt;&#xD;
+                &lt;Static/&gt;&#xD;
+                &lt;Name/&gt;&#xD;
+            &lt;/Sort&gt;&#xD;
+        &lt;/Entry&gt;&#xD;
+&#xD;
+        &lt;!-- constructors --&gt;&#xD;
+        &lt;Entry&gt;&#xD;
+            &lt;Match&gt;&#xD;
+                &lt;Or Weight="200"&gt;&#xD;
+                    &lt;Kind Is="constructor"/&gt;&#xD;
+                    &lt;Kind Is="destructor"/&gt;&#xD;
+                &lt;/Or&gt;&#xD;
+            &lt;/Match&gt;&#xD;
+            &lt;Sort&gt;&#xD;
+                &lt;Static/&gt;&#xD;
+                &lt;Kind Order="constructor destructor"/&gt;&#xD;
+                &lt;Access Order="public internal protected-internal protected private"/&gt;&#xD;
+            &lt;/Sort&gt;&#xD;
+        &lt;/Entry&gt;&#xD;
+&#xD;
+        &lt;!-- delegates and events --&gt;&#xD;
+        &lt;Entry&gt;&#xD;
+            &lt;Match&gt;&#xD;
+                &lt;Or&gt;&#xD;
+                    &lt;Kind Is="delegate"/&gt;&#xD;
+                    &lt;Kind Is="event"/&gt;&#xD;
+                &lt;/Or&gt;&#xD;
+            &lt;/Match&gt;&#xD;
+            &lt;Sort&gt;&#xD;
+                &lt;Kind Order="delegate event"/&gt;&#xD;
+                &lt;Access Order="public internal protected-internal protected private" /&gt;&#xD;
+                &lt;Name/&gt;&#xD;
+            &lt;/Sort&gt;&#xD;
+        &lt;/Entry&gt;&#xD;
+&#xD;
+        &lt;!-- enum --&gt;&#xD;
+        &lt;Entry&gt;&#xD;
+            &lt;Match&gt;&#xD;
+                &lt;Kind Is="enum"/&gt;&#xD;
+            &lt;/Match&gt;&#xD;
+            &lt;Sort&gt;&#xD;
+                &lt;Access Order="public internal protected-internal protected private" /&gt;&#xD;
+                &lt;Name/&gt;&#xD;
+            &lt;/Sort&gt;&#xD;
+        &lt;/Entry&gt;&#xD;
+&#xD;
+        &lt;!-- interfaces --&gt;&#xD;
+        &lt;Entry&gt;&#xD;
+            &lt;Match&gt;&#xD;
+                &lt;Kind Is="interface" /&gt;&#xD;
+            &lt;/Match&gt;&#xD;
+            &lt;Sort&gt;&#xD;
+                &lt;Access Order="public internal protected-internal protected private" /&gt;&#xD;
+                &lt;Name/&gt;&#xD;
+            &lt;/Sort&gt;&#xD;
+        &lt;/Entry&gt;&#xD;
+&#xD;
+        &lt;!-- properties --&gt;&#xD;
+        &lt;Entry&gt;&#xD;
+            &lt;Match&gt;&#xD;
+                &lt;Kind Is="property"/&gt;&#xD;
+            &lt;/Match&gt;&#xD;
+            &lt;Sort&gt;&#xD;
+                &lt;Access Order="public internal protected-internal protected private"/&gt;&#xD;
+                &lt;Static/&gt;&#xD;
+                &lt;Name/&gt;&#xD;
+            &lt;/Sort&gt;&#xD;
+        &lt;/Entry&gt;&#xD;
+&#xD;
+        &lt;!-- indexers --&gt;&#xD;
+        &lt;Entry&gt;&#xD;
+            &lt;Match&gt;&#xD;
+                &lt;Kind Is="indexer"&#xD;
+                      Weight="300" /&gt;&#xD;
+            &lt;/Match&gt;&#xD;
+            &lt;Sort&gt;&#xD;
+                &lt;Access Order="public internal protected-internal protected private" /&gt;&#xD;
+                &lt;Static/&gt;&#xD;
+                &lt;Name/&gt;&#xD;
+            &lt;/Sort&gt;&#xD;
+        &lt;/Entry&gt;&#xD;
+&#xD;
+        &lt;!-- operator --&gt;&#xD;
+        &lt;Entry&gt;&#xD;
+            &lt;Match&gt;&#xD;
+                &lt;Kind Is="operator"/&gt;&#xD;
+            &lt;/Match&gt;&#xD;
+            &lt;Sort&gt;&#xD;
+                &lt;Access Order="public internal protected-internal protected private" /&gt;&#xD;
+                &lt;Static/&gt;&#xD;
+                &lt;Name/&gt;&#xD;
+            &lt;/Sort&gt;&#xD;
+        &lt;/Entry&gt;&#xD;
+&#xD;
+        &lt;!-- public methods --&gt;&#xD;
+        &lt;Entry&gt;&#xD;
+            &lt;Match&gt;&#xD;
+                &lt;And&gt;&#xD;
+                    &lt;Kind Is="method"/&gt;&#xD;
+                    &lt;Access Is="public"/&gt;&#xD;
+                &lt;/And&gt;&#xD;
+            &lt;/Match&gt;&#xD;
+            &lt;Sort&gt;&#xD;
+                &lt;Access Order="public"/&gt;&#xD;
+                &lt;Static/&gt;&#xD;
+                &lt;Name/&gt;&#xD;
+            &lt;/Sort&gt;&#xD;
+        &lt;/Entry&gt;&#xD;
+&#xD;
+        &lt;!-- Implemented Interfaces --&gt;&#xD;
+        &lt;Entry&gt;&#xD;
+            &lt;Match&gt;&#xD;
+                &lt;And Weight="500"&gt;&#xD;
+                    &lt;Kind Is="method"/&gt;&#xD;
+                    &lt;ImplementsInterface CLRName=".*"/&gt;&#xD;
+                &lt;/And&gt;&#xD;
+            &lt;/Match&gt;&#xD;
+            &lt;Sort&gt;&#xD;
+                &lt;ImplementsInterface /&gt;&#xD;
+                &lt;Access Order="public internal protected-internal protected private"/&gt;&#xD;
+                &lt;Static/&gt;&#xD;
+                &lt;Name/&gt;&#xD;
+            &lt;/Sort&gt;&#xD;
+        &lt;/Entry&gt;&#xD;
+&#xD;
+        &lt;!-- other methods --&gt;&#xD;
+        &lt;Entry&gt;&#xD;
+            &lt;Match&gt;&#xD;
+                &lt;Kind Is="method"/&gt;&#xD;
+            &lt;/Match&gt;&#xD;
+            &lt;Sort&gt;&#xD;
+                &lt;Access Order="public internal protected-internal protected private"/&gt;&#xD;
+                &lt;Static/&gt;&#xD;
+                &lt;Name/&gt;&#xD;
+            &lt;/Sort&gt;&#xD;
+        &lt;/Entry&gt;&#xD;
+&#xD;
+        &lt;!-- Event handlers --&gt;&#xD;
+        &lt;Entry&gt;&#xD;
+            &lt;Match&gt;&#xD;
+                &lt;HandlesEvent Weight="400" /&gt;&#xD;
+            &lt;/Match&gt;&#xD;
+            &lt;Sort&gt;&#xD;
+                &lt;Static /&gt;&#xD;
+                &lt;Access Order="public internal protected-internal protected private" /&gt;&#xD;
+                &lt;Override/&gt;&#xD;
+                &lt;Name/&gt;&#xD;
+            &lt;/Sort&gt;&#xD;
+        &lt;/Entry&gt;&#xD;
+        &lt;!-- Nested structs --&gt;&#xD;
+        &lt;Entry&gt;&#xD;
+            &lt;Match&gt;&#xD;
+                &lt;Kind Is="struct"&#xD;
+                      Weight="600" /&gt;&#xD;
+            &lt;/Match&gt;&#xD;
+            &lt;Sort&gt;&#xD;
+                &lt;Static /&gt;&#xD;
+                &lt;Access Order="public internal protected-internal protected private" /&gt;&#xD;
+                &lt;Name/&gt;&#xD;
+            &lt;/Sort&gt;&#xD;
+        &lt;/Entry&gt;&#xD;
+&#xD;
+        &lt;!-- Nested classes --&gt;&#xD;
+        &lt;Entry&gt;&#xD;
+            &lt;Match&gt;&#xD;
+                &lt;Kind Is="class"&#xD;
+                      Weight="700" /&gt;&#xD;
+            &lt;/Match&gt;&#xD;
+            &lt;Sort&gt;&#xD;
+                &lt;Static /&gt;&#xD;
+                &lt;Access Order="public internal protected-internal protected private" /&gt;&#xD;
+                &lt;Name/&gt;&#xD;
+            &lt;/Sort&gt;&#xD;
+        &lt;/Entry&gt;&#xD;
+&#xD;
+        &lt;!-- all other members --&gt;&#xD;
+        &lt;Entry/&gt;&#xD;
+&#xD;
+    &lt;/Pattern&gt;&#xD;
+&lt;/Patterns&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/CSharpMemberOrderPattern/LayoutType/@EntryValue">CustomLayout</s:String>
+	
+	<s:String x:Key="/Default/CodeStyle/CSharpUsing/KeepImports/=System/@EntryIndexedValue">System</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/ExceptionName/@EntryValue"></s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=Constants/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AA_BB" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=EnumMember/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=Interfaces/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="I" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=LocalConstants/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="aaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=Locals/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="aaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=MethodPropertyEvent/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=Other/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=Parameters/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="aaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=PrivateConstants/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AA_BB" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=PrivateInstanceFields/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="_" Suffix="" Style="aaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=PrivateStaticFields/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="_" Suffix="" Style="aaBb"&gt;&lt;ExtraRule Prefix="" Suffix="" Style="AaBb" /&gt;&lt;/Policy&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=PrivateStaticReadonly/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AA_BB"&gt;&lt;ExtraRule Prefix="_" Suffix="" Style="aaBb" /&gt;&lt;/Policy&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=PublicFields/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=StaticReadonly/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=TypeParameters/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="T" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/CSharpNaming/PredefinedNamingRules/=TypesAndNamespaces/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/VBNaming/ExceptionName/@EntryValue"></s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/VBNaming/PredefinedNamingRules/=Constants/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AA_BB" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/VBNaming/PredefinedNamingRules/=EnumMember/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/VBNaming/PredefinedNamingRules/=Interfaces/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="I" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/VBNaming/PredefinedNamingRules/=LocalConstants/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="aaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/VBNaming/PredefinedNamingRules/=Locals/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="aaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/VBNaming/PredefinedNamingRules/=MethodPropertyEvent/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/VBNaming/PredefinedNamingRules/=Other/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/VBNaming/PredefinedNamingRules/=Parameters/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="aaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/VBNaming/PredefinedNamingRules/=PrivateConstants/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AA_BB" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/VBNaming/PredefinedNamingRules/=PrivateInstanceFields/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="_" Suffix="" Style="aaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/VBNaming/PredefinedNamingRules/=PrivateStaticFields/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="_" Suffix="" Style="aaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/VBNaming/PredefinedNamingRules/=PrivateStaticReadonly/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AA_BB"&gt;&lt;ExtraRule Prefix="_" Suffix="" Style="aaBb" /&gt;&lt;/Policy&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/VBNaming/PredefinedNamingRules/=PublicFields/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/VBNaming/PredefinedNamingRules/=StaticReadonly/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/VBNaming/PredefinedNamingRules/=TypeParameters/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="T" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/Naming/VBNaming/PredefinedNamingRules/=TypesAndNamespaces/@EntryIndexedValue">&lt;Policy Inspect="True" Prefix="" Suffix="" Style="AaBb" /&gt;</s:String>
+	<s:String x:Key="/Default/CodeStyle/VBImport/KeepImports/=System/@EntryIndexedValue">System</s:String>
+	<s:Boolean x:Key="/Default/Environment/SettingsMigration/IsMigratorApplied/=JetBrains_002EReSharper_002EPsi_002ECSharp_002ECodeStyle_002ESettingsUpgrade_002EMigrateBlankLinesAroundFieldToBlankLinesAroundProperty/@EntryIndexedValue">True</s:Boolean>
+	
+	
+	
+	
+	
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0C603444935314488F563ED467DD9D7A/@KeyIndexDefined">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0C603444935314488F563ED467DD9D7A/Applicability/=Live/@EntryIndexedValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0C603444935314488F563ED467DD9D7A/Description/@EntryValue">new error for commands</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0C603444935314488F563ED467DD9D7A/Reformat/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0C603444935314488F563ED467DD9D7A/Shortcut/@EntryValue">merr</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0C603444935314488F563ED467DD9D7A/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0C603444935314488F563ED467DD9D7A/Text/@EntryValue">public class $NAME$ : $Error$ {&#xD;
+  public $NAME$(&#xD;
+}</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0C603444935314488F563ED467DD9D7A/Field/=Error/@KeyIndexDefined">True</s:Boolean>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0C603444935314488F563ED467DD9D7A/Field/=Error/Order/@EntryValue">1</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0C603444935314488F563ED467DD9D7A/Field/=NAME/@KeyIndexDefined">True</s:Boolean>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0C603444935314488F563ED467DD9D7A/Field/=NAME/Order/@EntryValue">0</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0C603444935314488F563ED467DD9D7A/Scope/=139FF4CE89E7094686FDA7BF5FFBBE92/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0C603444935314488F563ED467DD9D7A/Scope/=139FF4CE89E7094686FDA7BF5FFBBE92/Type/@EntryValue">Everywhere</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=56B7B78040AEE546BF054DA38BDDD804/@KeyIndexDefined">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=56B7B78040AEE546BF054DA38BDDD804/Applicability/=File/@EntryIndexedValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=56B7B78040AEE546BF054DA38BDDD804/CustomProperties/=Extension/@EntryIndexedValue">cs</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=56B7B78040AEE546BF054DA38BDDD804/CustomProperties/=FileName/@EntryIndexedValue">MyClass</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=56B7B78040AEE546BF054DA38BDDD804/CustomProperties/=ValidateFileName/@EntryIndexedValue">True</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=56B7B78040AEE546BF054DA38BDDD804/Description/@EntryValue">test</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=56B7B78040AEE546BF054DA38BDDD804/Reformat/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=56B7B78040AEE546BF054DA38BDDD804/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=56B7B78040AEE546BF054DA38BDDD804/Text/@EntryValue">using System;&#xD;
+using System.Collections.Generic;&#xD;
+using System.Linq;&#xD;
+using NUnit.Framework;&#xD;
+using OpenWrap;&#xD;
+using OpenWrap.Testing;&#xD;
+using Tests;&#xD;
+&#xD;
+namespace $namespace$&#xD;
+{&#xD;
+    public class $spec$ : contexts.$context$&#xD;
+	{&#xD;
+		public $spec$()&#xD;
+		{&#xD;
+		}&#xD;
+	}&#xD;
+}</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=56B7B78040AEE546BF054DA38BDDD804/Field/=context/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=56B7B78040AEE546BF054DA38BDDD804/Field/=context/Expression/@EntryValue">completeSmart()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=56B7B78040AEE546BF054DA38BDDD804/Field/=context/Order/@EntryValue">2</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=56B7B78040AEE546BF054DA38BDDD804/Field/=namespace/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=56B7B78040AEE546BF054DA38BDDD804/Field/=namespace/Expression/@EntryValue">fileDefaultNamespace()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=56B7B78040AEE546BF054DA38BDDD804/Field/=namespace/InitialRange/@EntryValue">-1</s:Int64>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=56B7B78040AEE546BF054DA38BDDD804/Field/=namespace/Order/@EntryValue">0</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=56B7B78040AEE546BF054DA38BDDD804/Field/=spec/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=56B7B78040AEE546BF054DA38BDDD804/Field/=spec/Expression/@EntryValue">getFileNameWithoutExtension()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=56B7B78040AEE546BF054DA38BDDD804/Field/=spec/InitialRange/@EntryValue">-1</s:Int64>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=56B7B78040AEE546BF054DA38BDDD804/Field/=spec/Order/@EntryValue">1</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=56B7B78040AEE546BF054DA38BDDD804/Scope/=E8F0594528C33E45BBFEC6CFE851095D/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=56B7B78040AEE546BF054DA38BDDD804/Scope/=E8F0594528C33E45BBFEC6CFE851095D/Type/@EntryValue">InCSharpProjectFile</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/StructuralSearch/Pattern/=C4C40E115A8FD2488EE0ECF2A28F719D/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/StructuralSearch/Pattern/=C4C40E115A8FD2488EE0ECF2A28F719D/Comment/@EntryValue">generic error</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/StructuralSearch/Pattern/=C4C40E115A8FD2488EE0ECF2A28F719D/IsReplacePattern/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/StructuralSearch/Pattern/=C4C40E115A8FD2488EE0ECF2A28F719D/LanguageName/@EntryValue">CSHARP</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/StructuralSearch/Pattern/=C4C40E115A8FD2488EE0ECF2A28F719D/ReplaceComment/@EntryValue">specific error</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/StructuralSearch/Pattern/=C4C40E115A8FD2488EE0ECF2A28F719D/ReplacePattern/@EntryValue">new $customErrorType$($messageParams$);&#xD;
+&#xD;
+</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/StructuralSearch/Pattern/=C4C40E115A8FD2488EE0ECF2A28F719D/SearchPattern/@EntryValue">new $error$($message$,$messageParams$)</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/StructuralSearch/Pattern/=C4C40E115A8FD2488EE0ECF2A28F719D/CustomPatternPlaceholder/=customErrorType/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/StructuralSearch/Pattern/=C4C40E115A8FD2488EE0ECF2A28F719D/CustomPatternPlaceholder/=customErrorType/Properties/=ExactType/@EntryIndexedValue">False</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/StructuralSearch/Pattern/=C4C40E115A8FD2488EE0ECF2A28F719D/CustomPatternPlaceholder/=customErrorType/Properties/=Type/@EntryIndexedValue">Error</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/StructuralSearch/Pattern/=C4C40E115A8FD2488EE0ECF2A28F719D/CustomPatternPlaceholder/=customErrorType/Type/@EntryValue">TypePlaceholder</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/StructuralSearch/Pattern/=C4C40E115A8FD2488EE0ECF2A28F719D/CustomPatternPlaceholder/=error/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/StructuralSearch/Pattern/=C4C40E115A8FD2488EE0ECF2A28F719D/CustomPatternPlaceholder/=error/Properties/=ExactType/@EntryIndexedValue">True</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/StructuralSearch/Pattern/=C4C40E115A8FD2488EE0ECF2A28F719D/CustomPatternPlaceholder/=error/Properties/=Type/@EntryIndexedValue">OpenWrap.Commands.Error</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/StructuralSearch/Pattern/=C4C40E115A8FD2488EE0ECF2A28F719D/CustomPatternPlaceholder/=error/Type/@EntryValue">TypePlaceholder</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/StructuralSearch/Pattern/=C4C40E115A8FD2488EE0ECF2A28F719D/CustomPatternPlaceholder/=message/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/StructuralSearch/Pattern/=C4C40E115A8FD2488EE0ECF2A28F719D/CustomPatternPlaceholder/=message/Properties/=Maximal/@EntryIndexedValue">1</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/StructuralSearch/Pattern/=C4C40E115A8FD2488EE0ECF2A28F719D/CustomPatternPlaceholder/=message/Properties/=Minimal/@EntryIndexedValue">1</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/StructuralSearch/Pattern/=C4C40E115A8FD2488EE0ECF2A28F719D/CustomPatternPlaceholder/=message/Type/@EntryValue">ArgumentPlaceholder</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/StructuralSearch/Pattern/=C4C40E115A8FD2488EE0ECF2A28F719D/CustomPatternPlaceholder/=messageParams/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/StructuralSearch/Pattern/=C4C40E115A8FD2488EE0ECF2A28F719D/CustomPatternPlaceholder/=messageParams/Properties/=Maximal/@EntryIndexedValue">-1</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/StructuralSearch/Pattern/=C4C40E115A8FD2488EE0ECF2A28F719D/CustomPatternPlaceholder/=messageParams/Properties/=Minimal/@EntryIndexedValue">-1</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/StructuralSearch/Pattern/=C4C40E115A8FD2488EE0ECF2A28F719D/CustomPatternPlaceholder/=messageParams/Type/@EntryValue">ArgumentPlaceholder</s:String></wpf:ResourceDictionary>

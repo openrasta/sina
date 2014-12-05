@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRasta.Sina", "OpenRasta.Sina\OpenRasta.Sina.csproj", "{125C973D-487C-481B-80B5-DBEB938BEC34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{03F7D6FE-04C8-46E8-9784-66EF396FE298}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{125C973D-487C-481B-80B5-DBEB938BEC34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{125C973D-487C-481B-80B5-DBEB938BEC34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{125C973D-487C-481B-80B5-DBEB938BEC34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{125C973D-487C-481B-80B5-DBEB938BEC34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03F7D6FE-04C8-46E8-9784-66EF396FE298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03F7D6FE-04C8-46E8-9784-66EF396FE298}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03F7D6FE-04C8-46E8-9784-66EF396FE298}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03F7D6FE-04C8-46E8-9784-66EF396FE298}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
