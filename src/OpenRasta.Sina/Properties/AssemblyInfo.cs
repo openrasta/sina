@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Sina - Text processing)]
+[assembly: AssemblyTitle("Sina - Text processing")]
 [assembly: AssemblyDescription("A better regex, by OpenRasta")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("naughtyProd Limited")]
