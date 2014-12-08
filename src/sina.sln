@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRasta.Sina", "OpenRasta.Sina\OpenRasta.Sina.csproj", "{125C973D-487C-481B-80B5-DBEB938BEC34}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{125C973D-487C-481B-80B5-DBEB938BEC34}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{03F7D6FE-04C8-46E8-9784-66EF396FE298}"
 EndProject

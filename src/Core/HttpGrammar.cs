@@ -4,6 +4,9 @@ using OpenRasta.Sina.Rules;
 
 namespace OpenRasta.Sina
 {
+  /// <summary>
+  /// A grammar implementing HTTP 7230
+  /// </summary>
     public class HttpGrammar : Grammar
     {
         /// <summary>
@@ -11,75 +14,71 @@ namespace OpenRasta.Sina
         /// </summary>
         public static readonly Rule<string> OptionalWhiteSpace;
 
-        static readonly Rule<string> AbsolutePath;
-        static readonly CharAlternateRule Alpha = AbnfGrammar.Alpha;
-        static readonly Rule<string> AsteriskForm;
-        static readonly Rule<string> Attribute;
-        static readonly CharAlternateRule CTEXT;
-        static readonly CharacterRule CarriageReturn = AbnfGrammar.CarriageReturn;
-        static readonly Rule<string> Comment;
-        static readonly Rule<string> ConnectionOption;
-        static readonly Rule<long> ContentLength;
-        static readonly Rule<string> CrLf = AbnfGrammar.CrLf;
-        static readonly CharacterRangeRule Digit = AbnfGrammar.Digit;
-        static readonly CharacterRule DoubleQuote;
-
-        static readonly Rule<string> FieldContent;
-        static readonly Rule<string> FieldName;
-        static readonly Rule<string> FieldValue;
-        static readonly Rule<Tuple<string, string>> HeaderField;
-        static readonly CharAlternateRule HexDigit = AbnfGrammar.HexDigit;
-        static readonly CharacterRule HorizontalTab = AbnfGrammar.HorizontalTab;
-        static readonly StringRule HttpName;
-        static readonly Rule<Version> HttpVersion;
-        static readonly CharacterRule LineFeed = AbnfGrammar.LineFeed;
-        static readonly Rule<string> Method;
-        static readonly Rule<string> ObsoleteFold;
-        static readonly CharacterRangeRule ObsoleteText;
-        static readonly CharacterRangeRule Octet = AbnfGrammar.Octet;
-        static readonly Rule<string> Pseudonym;
-        static readonly CharAlternateRule QDTEXT;
-        static readonly CharAlternateRule QDTEXTNF;
-        static readonly Rule<string> QuotedCPpair;
-        static readonly Rule<string> QuotedPair;
-        static readonly Rule<string> QuotedString;
-        static readonly Rule<string> QuotedStringNF;
-        static readonly Rule<string> Rank;
-        static readonly Rule<string> ReasonPhrasae;
-        static readonly Rule<string> ReceivedBy;
-        static readonly Rule<string> ReceivedProtocol;
-        static readonly Rule<Tuple<string, string, Version>> RequestLine;
-        static readonly Rule<string> RequestTarget;
+        public static readonly Rule<string> AbsolutePath;
+        public static readonly CharAlternateRule Alpha = AbnfGrammar.Alpha;
+        public static readonly Rule<string> AsteriskForm;
+        public static readonly Rule<string> Attribute;
+        public static readonly CharAlternateRule CTEXT;
+        public static readonly CharacterRule CarriageReturn = AbnfGrammar.CarriageReturn;
+        public static readonly Rule<string> Comment;
+        public static readonly Rule<string> ConnectionOption;
+        public static readonly Rule<long> ContentLength;
+        public static readonly Rule<string> CrLf = AbnfGrammar.CrLf;
+        public static readonly CharacterRangeRule Digit = AbnfGrammar.Digit;
+        public static readonly CharacterRule DoubleQuote;
+        public static readonly Rule<string> FieldContent;
+        public static readonly Rule<string> FieldName;
+        public static readonly Rule<string> FieldValue;
+        public static readonly Rule<Tuple<string, string>> HeaderField;
+        public static readonly CharAlternateRule HexDigit = AbnfGrammar.HexDigit;
+        public static readonly CharacterRule HorizontalTab = AbnfGrammar.HorizontalTab;
+        public static readonly StringRule HttpName;
+        public static readonly Rule<Version> HttpVersion;
+        public static readonly CharacterRule LineFeed = AbnfGrammar.LineFeed;
+        public static readonly Rule<string> Method;
+        public static readonly Rule<string> ObsoleteFold;
+        public static readonly CharacterRangeRule ObsoleteText;
+        public static readonly CharacterRangeRule Octet = AbnfGrammar.Octet;
+        public static readonly Rule<string> Pseudonym;
+        public static readonly CharAlternateRule QDTEXT;
+        public static readonly CharAlternateRule QDTEXTNF;
+        public static readonly Rule<string> QuotedCPpair;
+        public static readonly Rule<string> QuotedPair;
+        public static readonly Rule<string> QuotedString;
+        public static readonly Rule<string> QuotedStringNF;
+        public static readonly Rule<string> Rank;
+        public static readonly Rule<string> ReasonPhrasae;
+        public static readonly Rule<string> ReceivedBy;
+        public static readonly Rule<string> ReceivedProtocol;
+        public static readonly Rule<Tuple<string, string, Version>> RequestLine;
+        public static readonly Rule<string> RequestTarget;
 
         /// <summary>
         ///     RWS
         /// </summary>
-        static readonly Rule<string> RequiredWhiteSpace;
-
-        static readonly CharacterRule Space = AbnfGrammar.Space;
-        static readonly CharAlternateRule Special;
-
-        static readonly Rule<string> StartLine;
-        static readonly Rule<string> StatusCode;
-        static readonly Rule<string> StatusLine;
-        static readonly Rule<object> TCodings;
-        static readonly Rule<string> Token;
+        public static readonly Rule<string> RequiredWhiteSpace;
+        public static readonly CharacterRule Space = AbnfGrammar.Space;
+        public static readonly CharAlternateRule Special;
+        public static readonly Rule<string> StartLine;
+        public static readonly Rule<string> StatusCode;
+        public static readonly Rule<string> StatusLine;
+        public static readonly Rule<object> TCodings;
+        public static readonly Rule<string> Token;
 
         /// <summary>
         ///     TCHAR
         /// </summary>
-        static readonly CharAlternateRule TokenCharacter;
-
-        static readonly Rule<string> TransferCoding;
-        static readonly Rule<int> TransferExtension;
-        static readonly Rule<object> TransferParameter;
-        static readonly CharacterRule TransferRanking;
-        static readonly Rule<string> Value;
-        static readonly CharacterRangeRule VisibleCharacter = AbnfGrammar.VisibleCharacters;
-        static readonly Rule<string> Word;
-        static Rule<string> HttpMessage;
-        static CharacterRangeRule MessageBody;
-        static Rule<string> ReasonPhrase;
+        public static readonly CharAlternateRule TokenCharacter;
+        public static readonly Rule<string> TransferCoding;
+        public static readonly Rule<int> TransferExtension;
+        public static readonly Rule<object> TransferParameter;
+        public static readonly CharacterRule TransferRanking;
+        public static readonly Rule<string> Value;
+        public static readonly CharacterRangeRule VisibleCharacter = AbnfGrammar.VisibleCharacters;
+        public static readonly Rule<string> Word;
+        public static Rule<string> HttpMessage;
+        public static CharacterRangeRule MessageBody;
+        public static Rule<string> ReasonPhrase;
 
 
         [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1121:UseBuiltInTypeAlias", Justification = "StyleCopBug")]
