@@ -1,10 +1,10 @@
 ﻿namespace OpenRasta.Sina.Rules
 {
-    public class OptionalRefTypeRule<T> : Rule<T> where T:class
+    public class OptionalRefereneTypeRule<T> : Rule<T> where T:class
     {
         readonly IParser<T> _rule;
 
-        public OptionalRefTypeRule(Rule<T> rule)
+        public OptionalRefereneTypeRule(Rule<T> rule)
         {
             _rule = rule;
         }

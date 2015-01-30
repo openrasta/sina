@@ -48,7 +48,7 @@
     <Compile Include="Rules\EmbeddedRule.cs" />
     <Compile Include="IParser.cs" />
     <Compile Include="Match.cs" />
-    <Compile Include="Rules\OptionalRefTypeRule.cs" />
+    <Compile Include="Rules\OptionalRefereneTypeRule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rules\OptionalValueTypeRule.cs" />
     <Compile Include="Rules\ReductionRule.cs" />
@@ -60,7 +60,9 @@
     <Compile Include="Rules\StringRule.cs" />
     <Compile Include="Grammar.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Core.nuspec" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

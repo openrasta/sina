@@ -26,7 +26,7 @@ namespace OpenRasta.Sina.Rules
         }
         public static Rule<T> Optional<T>(this Rule<T> parser) where T:class
         {
-            return new OptionalRefTypeRule<T>(parser);
+            return new OptionalRefereneTypeRule<T>(parser);
         }
 
         public static Rule<IEnumerable<T>> Repeat<T>(this Rule<T> rule, int minimum = 0, int maximum = -1)

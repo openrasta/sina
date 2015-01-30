@@ -82,7 +82,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{125C973D-487C-481B-80B5-DBEB938BEC34}</Project>
-      <Name>OpenRasta.Sina</Name>
+      <Name>Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
