@@ -55,7 +55,6 @@
     <Compile Include="combine\three_operators_with_transformation.cs" />
     <Compile Include="combine\two_operators_with_transformation.cs" />
     <Compile Include="contexts\parsing_text_to.cs" />
-    <Compile Include="list\matching.cs" />
     <Compile Include="operators\plus.cs" />
     <Compile Include="optionals\absent.cs" />
     <Compile Include="optionals\present.cs" />

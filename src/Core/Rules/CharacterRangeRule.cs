@@ -36,7 +36,7 @@
         public override string ToString()
         {
             var charForm = char.IsLetterOrDigit(_from) && char.IsLetterOrDigit(_to);
-            return string.Format(charForm ? "{0}-{1}" : "%x{0:X}-{1:X}", _from, _to);
+            return string.Format(charForm ? "{0}-{1}" : "0x{0:X}-{1:X}", _from, _to);
         }
 
         static Match<char> MovePositionAndReturn(StringInput input)

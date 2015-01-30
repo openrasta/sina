@@ -40,8 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbnfGrammar.cs" />
-    <Compile Include="HttpGrammar.cs" />
-    <Compile Include="HttpGrammarExtensions.cs" />
     <Compile Include="Rules\AlternateRule.cs" />
     <Compile Include="Rules\CharacterRangeRule.cs" />
     <Compile Include="Rules\CharacterRule.cs" />

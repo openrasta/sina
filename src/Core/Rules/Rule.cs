@@ -27,6 +27,7 @@ namespace OpenRasta.Sina.Rules
             return new CombineToStringRule<T, T>(left, right);
         }
 
+
         public static AlternateRule<T> operator /(Rule<T> left, Rule<T> right)
         {
             return new AlternateRule<T>(new[] { left, right });
@@ -39,4 +40,5 @@ namespace OpenRasta.Sina.Rules
 
         public abstract Match<T> Match(StringInput input);
     }
+
 }

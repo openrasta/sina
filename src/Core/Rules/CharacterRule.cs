@@ -10,6 +10,11 @@ namespace OpenRasta.Sina.Rules
         {
             _character = character;
         }
+
+        public static NotCharacterRule operator !(CharacterRule rule)
+        {
+            return new NotCharacterRule(rule._character);
+        }
         public static CharAlternateRule operator /(CharacterRule left, CharacterRule right)
         {
             return new CharAlternateRule(left,right);
