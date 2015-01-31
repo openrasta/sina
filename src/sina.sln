@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{862FD424-E6C3-41EA-967D-A97D040D6AE2}"
 	ProjectSection(SolutionItems) = preProject
 		..\appveyor.yml = ..\appveyor.yml
+		..\nuget.config = ..\nuget.config
 	EndProjectSection
 EndProject
 Global
