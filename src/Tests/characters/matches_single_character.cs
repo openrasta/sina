@@ -20,7 +20,7 @@ namespace Tests.characters
         }
 
         [Fact]
-        public void position_in_in_put_is_set()
+        public void position_input_is_set()
         {
             input.Position.ShouldEqual(1);
         }

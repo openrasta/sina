@@ -50,7 +50,7 @@ namespace OpenRasta.Sina
                 input.Current == _c)
                 return Match<char>.None;
 
-            var match = new Match<char>(_c);
+            var match = new Match<char>(input.Current);
             input.Position++;
             return match;
         }

@@ -51,6 +51,7 @@
     <Compile Include="alternates\matching_one_char_or_another.cs" />
     <Compile Include="cardinals\matches_max.cs" />
     <Compile Include="cardinals\matches_min.cs" />
+    <Compile Include="characters\not.cs" />
     <Compile Include="characters\no_match_at_end.cs" />
     <Compile Include="combine\three_operators_with_transformation.cs" />
     <Compile Include="combine\two_operators_with_transformation.cs" />
@@ -85,7 +86,6 @@
       <Name>Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
