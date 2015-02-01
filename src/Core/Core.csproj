@@ -45,8 +45,8 @@
     <Compile Include="Rules\CharacterRangeRule.cs" />
     <Compile Include="Rules\CharacterRule.cs" />
     <Compile Include="Rules\CharAlternateRule.cs" />
-    <Compile Include="Rules\CombineToStringRule.cs" />
-    <Compile Include="Rules\CombineConvertRule.cs" />
+    <Compile Include="Rules\ConcatToStringRule.cs" />
+    <Compile Include="Rules\ConcatConvertRule.cs" />
     <Compile Include="IParser.cs" />
     <Compile Include="Match.cs" />
     <Compile Include="Rules\OptionalReferenceTypeRule.cs" />

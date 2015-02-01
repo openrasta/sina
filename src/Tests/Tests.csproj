@@ -61,6 +61,9 @@
     <Compile Include="conditional\not_match.cs" />
     <Compile Include="contexts\parsing_text_to.cs" />
     <Compile Include="joined\character_separated.cs" />
+    <Compile Include="non_capturing\char_fold_left.cs" />
+    <Compile Include="non_capturing\char_fold_right.cs" />
+    <Compile Include="non_capturing\multi_fold.cs" />
     <Compile Include="operators\plus.cs" />
     <Compile Include="optionals\absent.cs" />
     <Compile Include="optionals\present.cs" />
@@ -75,6 +78,7 @@
     <Compile Include="cardinals\textual\matches_once_or_more.cs" />
     <Compile Include="cardinals\textual\match_zero_or_more.cs" />
     <Compile Include="range\not.cs" />
+    <Compile Include="range\not_multiple.cs" />
     <Compile Include="range\no_match.cs" />
     <Compile Include="range\no_match_for_empty.cs" />
     <Compile Include="select\non_matching.cs" />

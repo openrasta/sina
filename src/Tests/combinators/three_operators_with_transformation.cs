@@ -11,7 +11,7 @@ namespace Tests.combinators
         public three_operators_with_transformation()
         {
             given_rule(from opening in Grammar.Character('(')
-                       from text in Grammar.Character('a').RepeatExactly(2)
+                       from text in Grammar.Character('a').Count(2)
                        from closing in Grammar.Character(')')
                        select text);
             when_matching("(aa)");

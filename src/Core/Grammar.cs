@@ -28,9 +28,9 @@ namespace OpenRasta.Sina
             return new StringRule(text);
         }
 
-        public static Rule<char> Not(char c)
+        public static Rule<char> Not(params char[] disallowed)
         {
-            return new NotCharacterRule(c);
+            return new NotCharacterRule(disallowed);
         }
     }
 }

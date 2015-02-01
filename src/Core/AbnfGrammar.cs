@@ -109,7 +109,7 @@ namespace OpenRasta.Sina
       Space = ' ';
       WhiteSpace = Space / HorizontalTab;
       VisibleCharacters = Range(0x21, 0x7e);
-      LinearWhiteSpace = (WhiteSpace / (CrLf + WhiteSpace)).ZeroOrMore();
+      LinearWhiteSpace = (WhiteSpace / (CrLf + WhiteSpace)).Any();
     }
 
     public static Rule<T> Alternates<T>(params Rule<T>[] alternates)

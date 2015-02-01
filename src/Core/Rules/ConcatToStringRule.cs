@@ -3,10 +3,10 @@ using System.Text;
 
 namespace OpenRasta.Sina.Rules
 {
-    public class CombineToStringRule<TLeft, TRight> : 
-        CombineConvertRule<TLeft,TRight,string>
+    public class ConcatToStringRule<TLeft, TRight> : 
+        ConcatConvertRule<TLeft,TRight,string>
     {
-        public CombineToStringRule(Rule<TLeft> left, Rule<TRight> right)
+        public ConcatToStringRule(Rule<TLeft> left, Rule<TRight> right)
             : base(left, right, AsString)
         {
         }

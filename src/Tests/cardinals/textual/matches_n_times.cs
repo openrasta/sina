@@ -10,7 +10,7 @@ namespace Tests.cardinals.textual
     {
         public matches_n_times()
         {
-            given_rule(Grammar.Character('a').RepeatExactly(2));
+            given_rule(Grammar.Character('a').Count(2));
             when_matching("aa", "aaa", "a");
         }
 

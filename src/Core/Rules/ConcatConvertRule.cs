@@ -2,13 +2,13 @@
 
 namespace OpenRasta.Sina.Rules
 {
-    public class CombineConvertRule<TLeft, TRight, TResult> : Rule<TResult>
+    public class ConcatConvertRule<TLeft, TRight, TResult> : Rule<TResult>
     {
         readonly Func<TLeft, TRight, TResult> _converter;
         readonly IParser<TLeft> _left;
         readonly IParser<TRight> _right;
 
-        public CombineConvertRule(Rule<TLeft> left, Rule<TRight> right, Func<TLeft, TRight, TResult> converter)
+        public ConcatConvertRule(Rule<TLeft> left, Rule<TRight> right, Func<TLeft, TRight, TResult> converter)
         {
             _left = left;
             _right = right;

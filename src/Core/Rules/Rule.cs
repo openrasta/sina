@@ -6,25 +6,25 @@ namespace OpenRasta.Sina.Rules
     {
         public static Rule<string> operator +(Rule<T> left, Rule<char> right)
         {
-            return new CombineToStringRule<T, char>(left, right);
+            return new ConcatToStringRule<T, char>(left, right);
         }
         public static Rule<string> operator +(Rule<T> left, char right)
         {
-            return new CombineToStringRule<T, char>(left, new CharacterRule(right));
+            return new ConcatToStringRule<T, char>(left, new CharacterRule(right));
         }
         public static Rule<string> operator +(Rule<T> left, Rule<char?> right)
         {
-            return new CombineToStringRule<T, char?>(left, right);
+            return new ConcatToStringRule<T, char?>(left, right);
         }
 
         public static Rule<string> operator +(Rule<T> left, Rule<string> right)
         {
-            return new CombineToStringRule<T, string>(left, right);
+            return new ConcatToStringRule<T, string>(left, right);
         }
 
         public static Rule<string> operator +(Rule<T> left, Rule<T> right)
         {
-            return new CombineToStringRule<T, T>(left, right);
+            return new ConcatToStringRule<T, T>(left, right);
         }
 
 
@@ -35,10 +35,41 @@ namespace OpenRasta.Sina.Rules
 
         public static Rule<string> operator /(Rule<T> left, Rule<string> right)
         {
-            return new AlternateRule<string>(new[] { left.Select(_ => _.ToString()), right });
+            return new AlternateRule<string>(left.Select(_ => _.ToString()), right);
         }
 
+
         public abstract Match<T> Match(StringInput input);
+
+        public static NonCapturingRule<T> operator -(Rule<T> rule)
+        {
+            return new NonCapturingRule<T>(rule);
+        }
     }
 
+    public class NonCapturingRule<T> : Rule<T>
+    {
+        readonly Rule<T> _rule;
+
+        public NonCapturingRule(Rule<T> rule)
+        {
+            _rule = rule;
+        }
+
+        public override Match<T> Match(StringInput input)
+        {
+            var match = _rule.Match(input);
+            return match.IsMatch ? new Match<T>(default(T)) { Backtrack = match.Backtrack } : match;
+        }
+
+        public static Rule<T> operator +(NonCapturingRule<T> left, Rule<T> right)
+        {
+            return new ConcatConvertRule<T,T,T>(left, right, (l,r)=>r);
+        }
+
+        public static Rule<T> operator +(Rule<T> left, NonCapturingRule<T> right)
+        {
+            return new ConcatConvertRule<T, T, T>(left, right, (l, r) => l);
+        }
+    }
 }

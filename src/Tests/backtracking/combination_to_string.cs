@@ -10,7 +10,7 @@ namespace Tests.backtracking
     {
         public combination_to_string()
         {
-            given_rule(Grammar.Any().AtLeast(1) +
+            given_rule(Grammar.Any().Min(1) +
                        Grammar.Character('a'));
             when_matching("aa");
         }

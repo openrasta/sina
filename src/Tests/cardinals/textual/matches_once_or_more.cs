@@ -9,7 +9,7 @@ namespace Tests.cardinals.textual
     {
         public matches_once_or_more()
         {
-            given_rule(Grammar.Character('z').AtLeast(1));
+            given_rule(Grammar.Character('z').Min(1));
             when_matching("a", "z", "zz");
         }
 

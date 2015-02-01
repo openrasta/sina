@@ -1,4 +1,7 @@
-﻿using OpenRasta.Sina;
+﻿using System.Collections.Generic;
+using System.Linq;
+using OpenRasta.Sina;
+using OpenRasta.Sina.Rules;
 using Should;
 using Xunit;
 

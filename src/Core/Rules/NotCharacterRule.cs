@@ -1,19 +1,29 @@
-﻿namespace OpenRasta.Sina.Rules
+﻿using System;
+using System.Linq;
+
+namespace OpenRasta.Sina.Rules
 {
     public class NotCharacterRule : Rule<char>
     {
-        readonly char _c;
+        readonly char[] _c;
+        readonly Func<char, bool> _isForbisdden;
 
-        public NotCharacterRule(char c)
+        public NotCharacterRule(params char[] c)
         {
             _c = c;
+            Func<char, bool> selector = _ => false;
+            _isForbisdden = c.Aggregate(
+                        selector,
+                        (previous, expected) =>
+                        input => previous(input) || input == expected
+                );
         }
 
 
         public override Match<char> Match(StringInput input)
         {
             if (input.Position >= input.Text.Length ||
-                input.Current == _c)
+                _isForbisdden(input.Current))
                 return Match<char>.None;
 
             var match = new Match<char>(input.Current);

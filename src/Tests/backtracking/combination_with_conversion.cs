@@ -10,8 +10,8 @@ namespace Tests.backtracking
     {
         public combination_with_conversion()
         {
-            given_rule(from onePlus in Grammar.Character('a').AtLeast(1)
-                       from one in Grammar.Character('a').AtLeast(1)
+            given_rule(from onePlus in Grammar.Character('a').Min(1)
+                       from one in Grammar.Character('a').Min(1)
                        select Tuple.Create(onePlus,one));
             when_matching("aa");
         }
