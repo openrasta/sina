@@ -66,6 +66,10 @@ namespace OpenRasta.Sina
             return new CadinalToStringRule<char>(parser, minimum, maximum);
         }
 
+        public static Rule<T> Where<T>(this Rule<T> parser, Func<T, bool> selector)
+        {
+            return new ConditionRule<T>(parser, selector);
+        }
 
         public static Rule<TResult> Select<T, TResult>(this Rule<T> parser, Func<T, TResult> converter)
         {
@@ -91,6 +95,26 @@ namespace OpenRasta.Sina
         public static Rule<string> ZeroOrMore(this Rule<char> rule)
         {
             return rule.AtLeast(0);
+        }
+    }
+
+    public class ConditionRule<T> : Rule<T>
+    {
+        readonly Rule<T> _parser;
+        readonly Func<T, bool> _selector;
+
+        public ConditionRule(Rule<T> parser, Func<T,bool> selector)
+        {
+            _parser = parser;
+            _selector = selector;
+        }
+
+        public override Match<T> Match(StringInput input)
+        {
+            var result = _parser.Match(input);
+            return result.IsMatch && _selector(result.Value)
+                       ? result
+                       : Match<T>.None;
         }
     }
 }

@@ -57,6 +57,8 @@
     <Compile Include="backtracking\combination_with_conversion.cs" />
     <Compile Include="combinators\three_operators_with_transformation.cs" />
     <Compile Include="combinators\two_operators_with_transformation.cs" />
+    <Compile Include="conditional\match.cs" />
+    <Compile Include="conditional\not_match.cs" />
     <Compile Include="contexts\parsing_text_to.cs" />
     <Compile Include="joined\character_separated.cs" />
     <Compile Include="operators\plus.cs" />
