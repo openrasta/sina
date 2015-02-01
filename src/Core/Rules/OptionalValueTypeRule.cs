@@ -1,6 +1,6 @@
 ﻿namespace OpenRasta.Sina.Rules
 {
-    public class OptionalValueTypeRule<T> : Rule<T?> where T:struct
+    public class OptionalValueTypeRule<T> : Rule<T?> where T : struct
     {
         readonly Rule<T> _rule;
 
@@ -13,7 +13,12 @@
         public override Match<T?> Match(StringInput input)
         {
             var match = _rule.Match(input);
-            return new Match<T?>(match.IsMatch ? (T?)match.Value : null);
+            return match.IsMatch
+                ? new Match<T?>(match.Value)
+                {
+                    Backtrack = _ => Match<T?>.Empty
+                }
+                : Match<T?>.Empty;
         }
 
         public override string ToString()

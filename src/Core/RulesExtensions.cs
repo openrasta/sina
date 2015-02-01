@@ -1,18 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
+using OpenRasta.Sina.Rules;
 
-namespace OpenRasta.Sina.Rules
+namespace OpenRasta.Sina
 {
     public static class RulesExtensions
     {
+        public static Rule<IEnumerable<T>> List<T>(this Rule<T> rule, char separator)
+        {
+            return from firstRule in rule
+                   from seconds in (from sep in Grammar.Character(separator)
+                                    from second in rule
+                                    select second).Repeat()
+                   select NewList(firstRule, seconds);
+        }
+
+        static IEnumerable<T> NewList<T>(T firstRule, IEnumerable<T> seconds)
+        {
+            var list = new List<T> { firstRule };
+            list.AddRange(seconds);
+            return list;
+        }
+
         public static Rule<string> AtLeast(this Rule<char> rule, int minimum)
         {
-            return new RepeatToStringRule<char>(rule, minimum);
+            return new CadinalToStringRule<char>(rule, minimum);
         }
 
         public static Rule<string> AtLeast(this Rule<string> rule, int minimum)
         {
-            return new RepeatToStringRule<string>(rule, minimum);
+            return new CadinalToStringRule<string>(rule, minimum);
+        }
+
+        public static Rule<IEnumerable<T>> AtLeast<T>(this Rule<T> rule, int minimum)
+        {
+            return new CardinalRule<T>(rule, minimum);
         }
 
         public static Rule<string> Character<T>(this Rule<T> parser, char character)
@@ -26,22 +48,22 @@ namespace OpenRasta.Sina.Rules
         }
         public static Rule<T> Optional<T>(this Rule<T> parser) where T:class
         {
-            return new OptionalRefereneTypeRule<T>(parser);
+            return new OptionalReferenceTypeRule<T>(parser);
         }
 
         public static Rule<IEnumerable<T>> Repeat<T>(this Rule<T> rule, int minimum = 0, int maximum = -1)
         {
-            return new RepeatRule<T>(rule, minimum, maximum);
+            return new CardinalRule<T>(rule, minimum, maximum);
         }
 
-        public static Rule<string> Repeat(this Rule<char> parser, int count)
+        public static Rule<string> RepeatExactly(this Rule<char> parser, int count)
         {
-            return new RepeatToStringRule<char>(parser, count, count);
+            return new CadinalToStringRule<char>(parser, count, count);
         }
 
         public static Rule<string> Repeat(this Rule<char> parser, int minimum, int maximum)
         {
-            return new RepeatToStringRule<char>(parser, minimum, maximum);
+            return new CadinalToStringRule<char>(parser, minimum, maximum);
         }
 
 
@@ -54,7 +76,7 @@ namespace OpenRasta.Sina.Rules
                                                                 Func<Rule<T1>, Rule<T2>> rightFactory,
                                                                 Func<T1, T2, TResult> converter)
         {
-            return new EmbeddedRule<T1, T2, TResult>(left, rightFactory(left), converter);
+            return new CombineConvertRule<T1, T2, TResult>(left, rightFactory(left), converter);
         }
 
         public static Rule<string> String<T>(this Rule<T> parser, string input)

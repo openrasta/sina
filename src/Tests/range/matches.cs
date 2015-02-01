@@ -6,20 +6,6 @@ using Xunit;
 
 namespace Tests.range
 {
-    public class not : contexts.parsing_text_to<char>
-    {
-        public not()
-        {
-            given_rule(!Grammar.Character('a'));
-        }
-    }
-  public class combine_matches : contexts.parsing_text_to<char>
-  {
-    public combine_matches()
-    {
-      given_rule(Grammar.Range('a', 'm') / Grammar.Range('n', 'z'));
-    }
-  }
     public class matches : contexts.parsing_text_to<char>
     {
         public matches()

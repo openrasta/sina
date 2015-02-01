@@ -4,14 +4,14 @@ using System.Text;
 
 namespace OpenRasta.Sina.Rules
 {
-    public class RepeatToStringRule<T> : Rule<string>
+    public class CadinalToStringRule<T> : Rule<string>
     {
         readonly int _maximum;
         readonly int _minimum;
         readonly Rule<T> _rule;
 
 
-        public RepeatToStringRule(Rule<T> rule, int minimum = -1, int maximum = -1)
+        public CadinalToStringRule(Rule<T> rule, int minimum = -1, int maximum = -1)
         {
             _rule = rule;
             _minimum = minimum;
@@ -19,6 +19,12 @@ namespace OpenRasta.Sina.Rules
         }
 
         public override Match<string> Match(StringInput input)
+        {
+            var maximum = _maximum;
+            return MatchWithMax(input, maximum);
+        }
+
+        Match<string> MatchWithMax(StringInput input, int maximum)
         {
             var originalPosition = input.Position;
             var builder = new StringBuilder();
@@ -29,7 +35,7 @@ namespace OpenRasta.Sina.Rules
                 var match = _rule.Match(input);
                 if (match.IsMatch == false)
                 {
-                    if (_maximum == -1 || i < _maximum) break;
+                    if (maximum == -1 || i < maximum) break;
                     return Fail(input, originalPosition);
                 }
 
@@ -40,11 +46,20 @@ namespace OpenRasta.Sina.Rules
                 if (resultingValue.Length == 0) break;
                 builder.Append(resultingValue);
             }
-            while (_maximum == -1 || i < _maximum);
+            while (maximum == -1 || i < maximum);
 
             return (_minimum != -1 && i < _minimum)
                        ? Fail(input, originalPosition)
-                       : new Match<string>(builder.ToString());
+                       : new Match<string>(builder.ToString())
+                       {
+                           Backtrack = PrepareBacktrackIfPossible(i)
+                       };
+        }
+
+        Func<StringInput, Match<string>> PrepareBacktrackIfPossible(int i)
+        {
+            if (i == _minimum) return null;
+            return _ => MatchWithMax(_, i - 1);
         }
 
         public override string ToString()

@@ -1,11 +1,10 @@
 ﻿using System;
 using OpenRasta.Sina;
-using OpenRasta.Sina.Rules;
 using Should;
 using Tests.contexts;
 using Xunit;
 
-namespace Tests.combine
+namespace Tests.combinators
 {
     public class two_operators_with_transformation : parsing_text_to<string>
     {

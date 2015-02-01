@@ -11,7 +11,7 @@ namespace Tests.cardinals.textual
         public matches_between_m_and_n_times()
         {
             given_rule(Grammar.Character('z').Repeat(1, 2));
-            when_matching("a", "z", "zz");
+            when_matching("a", "z", "zz", "zzz");
         }
 
         [Fact]
@@ -24,6 +24,7 @@ namespace Tests.cardinals.textual
         public void matches_maximum()
         {
             results[2].ShouldMatch("zz");
+            results[3].ShouldMatch("zz");
         }
 
         [Fact]

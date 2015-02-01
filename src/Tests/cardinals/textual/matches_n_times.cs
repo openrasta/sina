@@ -10,14 +10,21 @@ namespace Tests.cardinals.textual
     {
         public matches_n_times()
         {
-            given_rule(Grammar.Character('a').Repeat(2));
-            when_matching("aa");
+            given_rule(Grammar.Character('a').RepeatExactly(2));
+            when_matching("aa", "aaa", "a");
         }
 
         [Fact]
         public void match_value_is_correct()
         {
-            result.ShouldMatch("aa");
+            results[0].ShouldMatch("aa");
+            results[1].ShouldMatch("aa");
+        }
+
+        [Fact]
+        public void not_enough_doesnt_match()
+        {
+            results[2].ShouldNotMatch();
         }
     }
 }

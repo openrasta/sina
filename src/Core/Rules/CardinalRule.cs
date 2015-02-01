@@ -1,15 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 
 namespace OpenRasta.Sina.Rules
 {
-    public class RepeatRule<T> : Rule<IEnumerable<T>>
+    public class CardinalRule<T> : Rule<IEnumerable<T>>
     {
         readonly int _maximum;
         readonly int _minimum;
         readonly Rule<T> _rule;
 
-        public RepeatRule(Rule<T> rule, int minimum = -1, int maximum = -1)
+        public CardinalRule(Rule<T> rule, int minimum = -1, int maximum = -1)
         {
             _rule = rule;
             _minimum = minimum;
@@ -18,7 +19,12 @@ namespace OpenRasta.Sina.Rules
 
         public override Match<IEnumerable<T>> Match(StringInput input)
         {
-            var results = _maximum > 0 ? new List<T>(_maximum) : new List<T>();
+            return MatchWithMax(input, _maximum);
+        }
+
+        Match<IEnumerable<T>> MatchWithMax(StringInput input, int maxCapacity)
+        {
+            var results = maxCapacity > 0 ? new List<T>(maxCapacity) : new List<T>();
 
             var originalPosition = input.Position;
             var i = 0;
@@ -28,18 +34,27 @@ namespace OpenRasta.Sina.Rules
                 var match = _rule.Match(input);
                 if (match.IsMatch == false)
                 {
-                    if (_maximum == -1 || i < _maximum) break;
+                    if (maxCapacity == -1 || i < maxCapacity) break;
                     return Fail(input, originalPosition);
                 }
                 results.Add(match.Value);
 
                 i++;
             }
-            while (_maximum == -1 || i < _maximum);
+            while (maxCapacity == -1 || i < maxCapacity);
 
             return (_minimum != -1 && i < _minimum)
                        ? Fail(input, originalPosition)
-                       : new Match<IEnumerable<T>>(results);
+                       : new Match<IEnumerable<T>>(results)
+                       {
+                           Backtrack = PrepareBacktrackIfNeeded(i)
+                       };
+        }
+
+        Func<StringInput, Match<IEnumerable<T>>> PrepareBacktrackIfNeeded(int i)
+        {
+            if (i == _minimum) return null;
+            return _ => MatchWithMax(_, i - 1);
         }
 
         public override string ToString()
