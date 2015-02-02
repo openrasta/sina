@@ -47,6 +47,9 @@
   <ItemGroup>
     <Compile Include="abnf\Character.cs" />
     <Compile Include="abnf\rules.cs" />
+    <Compile Include="alternates\EndClassExtension.cs" />
+    <Compile Include="alternates\matching_one_string_or_another.cs" />
+    <Compile Include="backtracking\alternate.cs" />
     <Compile Include="alternates\matching_one_char_or_another.cs" />
     <Compile Include="backtracking\combination_to_string.cs" />
     <Compile Include="backtracking\optional.cs" />
@@ -59,6 +62,7 @@
     <Compile Include="combinators\two_operators_with_transformation.cs" />
     <Compile Include="conditional\match.cs" />
     <Compile Include="conditional\not_match.cs" />
+    <Compile Include="conditional\not_match_partial.cs" />
     <Compile Include="contexts\parsing_text_to.cs" />
     <Compile Include="joined\character_separated.cs" />
     <Compile Include="non_capturing\char_fold_left.cs" />

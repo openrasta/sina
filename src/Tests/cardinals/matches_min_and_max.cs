@@ -14,7 +14,7 @@ namespace Tests.cardinals
         {
             given_rule(Grammar.Range('0', '9')
                               .Select(_ => int.Parse(_ + string.Empty))
-                              .Repeat(1, 4));
+                              .Range(1, 4));
 
             when_matching("0123");
         }

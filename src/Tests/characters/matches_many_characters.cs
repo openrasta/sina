@@ -10,7 +10,7 @@ namespace Tests.characters
     {
         public matches_many_characters()
         {
-            given_rule(Grammar.Character('a').Character('b'));
+            given_rule(Grammar.Character('a') + Grammar.Character('b'));
             when_matching("ab");
         }
 

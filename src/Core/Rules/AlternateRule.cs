@@ -17,27 +17,35 @@ namespace OpenRasta.Sina.Rules
         {
             _rules = rules.SelectMany(UnfoldAlternates).ToArray();
             if (_rules.Length < 2)
-                throw new ArgumentOutOfRangeException("rules", 
+                throw new ArgumentOutOfRangeException("rules",
                                                       "To choose between alternates requires at least two choices. Duh!");
         }
 
         public static AlternateRule<T> operator /(AlternateRule<T> left, Rule<T> right)
         {
-            return new AlternateRule<T>(new[] { left, right });
+            return new AlternateRule<T>(left, right);
         }
 
 
 
         public override Match<T> Match(StringInput input)
         {
+            return Match(input, 0);
+        }
+
+        Match<T> Match(StringInput input, int startPosition)
+        {
             var oldPosition = input.Position;
 
             // ReSharper disable once ForCanBeConvertedToForeach, known optimization
-            for (var i = 0; i < _rules.Length; i++)
+            for (var i = startPosition; i < _rules.Length; i++)
             {
                 var match = _rules[i].Match(input);
 
-                if (match.IsMatch) return match;
+                if (match.IsMatch) return new Match<T>(match.Value)
+                {
+                    Backtrack = _ => Match(_, startPosition+1)
+                };
                 input.Position = oldPosition;
             }
             return Match<T>.None;

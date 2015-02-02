@@ -4,7 +4,6 @@ using Xunit;
 
 namespace Tests.alternates
 {
-  
     public class matching_one_char_or_another : contexts.parsing_text_to<char>
     {
         public matching_one_char_or_another()

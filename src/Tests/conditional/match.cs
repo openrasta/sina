@@ -11,7 +11,7 @@ namespace Tests.conditional
     {
         public match()
         {
-            given_rule(from any in Grammar.Any().Select(_=>true)
+            given_rule(from any in Grammar.AnyCharacter().Select(_=>true)
                        where any
                        select "yay");
             when_matching("any old stuff");

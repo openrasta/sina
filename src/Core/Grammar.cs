@@ -4,7 +4,7 @@ namespace OpenRasta.Sina
 {
     public class Grammar
     {
-        public static CharacterRangeRule Any()
+        public static CharacterRangeRule AnyCharacter()
         {
             return new CharacterRangeRule((char)0x00, (char)0xff);
         }

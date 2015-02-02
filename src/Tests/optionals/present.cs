@@ -10,8 +10,8 @@ namespace Tests.optionals
     {
         public present()
         {
-            given_rule(Grammar.Character('a').Optional()
-                              .Character('b'));
+            given_rule(Grammar.Character('a').Optional() +
+                       Grammar.Character('b'));
             when_matching("ab", "b");
         }
 
