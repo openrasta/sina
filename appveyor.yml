@@ -25,5 +25,5 @@ assembly_info:
   assembly_informational_version: '{version}-alpha'
 
 notifications:
-  - provider: WebHook
+  - provider: Webhook
     url: https://webhooks.gitter.im/e/f8aa31c0a3427ee8e6f7
