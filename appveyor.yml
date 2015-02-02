@@ -23,3 +23,7 @@ assembly_info:
   assembly_version: '0.1.0'
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}-alpha'
+
+notifications:
+  - provider: WebHook
+    url: https://webhooks.gitter.im/e/f8aa31c0a3427ee8e6f7

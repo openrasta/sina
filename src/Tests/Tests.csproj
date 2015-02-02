@@ -47,7 +47,6 @@
   <ItemGroup>
     <Compile Include="abnf\Character.cs" />
     <Compile Include="abnf\rules.cs" />
-    <Compile Include="alternates\EndClassExtension.cs" />
     <Compile Include="alternates\matching_one_string_or_another.cs" />
     <Compile Include="backtracking\alternate.cs" />
     <Compile Include="alternates\matching_one_char_or_another.cs" />
