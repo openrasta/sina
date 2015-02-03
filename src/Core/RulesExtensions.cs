@@ -98,7 +98,7 @@ namespace OpenRasta.Sina
             public override Match<T> Match(StringInput input)
             {
                 return (input.Position >= input.Text.Length)
-                           ? Match<T>.Empty
+                           ? Match<T>.Empty(input.Position)
                            : Match<T>.None;
             }
             public override string ToString()

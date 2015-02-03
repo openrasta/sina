@@ -11,10 +11,12 @@
 
         public override Match<T> Match(StringInput input)
         {
+            var originalPosition = input.Position;
             var match = _rule.Match(input);
-            return new Match<T>(match.IsMatch ? match.Value : default(T))
+            return new Match<T>(match.IsMatch ? match.Value : default(T),
+                originalPosition, input.Position-originalPosition)
             {
-                Backtrack = _ => new Match<T>(default(T))
+                Backtrack = _ => Match<T>.Empty(originalPosition)
             };
         }
 

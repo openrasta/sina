@@ -21,13 +21,17 @@ namespace OpenRasta.Sina.Rules
 
         public override Match<string> Match(StringInput input)
         {
+
             _comparison = StringComparison.OrdinalIgnoreCase;
             if (input.Text.IndexOf(_text, input.Position, _comparison) == -1)
                 return Match<string>.None;
             var oldPosition = input.Position;
             input.Position += _text.Length;
 
-            return new Match<string>(input.Text.Substring(oldPosition, _text.Length));
+            return new Match<string>(
+                input.Text.Substring(oldPosition, _text.Length),
+                oldPosition,
+                _text.Length);
         }
 
         public override string ToString()

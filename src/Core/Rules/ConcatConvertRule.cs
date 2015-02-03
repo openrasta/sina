@@ -34,7 +34,9 @@ namespace OpenRasta.Sina.Rules
             while (leftParser != null && rightMatch.IsMatch == false);
 
             return rightMatch.IsMatch 
-                ? new Match<TResult>(_converter(leftMatch.Value, rightMatch.Value))
+                ? new Match<TResult>(_converter(leftMatch.Value, rightMatch.Value),
+                    originalPosition, input.Position-originalPosition
+                    )
                 : Match<TResult>.None;
         }
 

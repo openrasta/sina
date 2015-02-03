@@ -50,6 +50,7 @@
     <Compile Include="alternates\matching_one_string_or_another.cs" />
     <Compile Include="backtracking\alternate.cs" />
     <Compile Include="alternates\matching_one_char_or_another.cs" />
+    <Compile Include="backtracking\cardinals.cs" />
     <Compile Include="backtracking\combination_to_string.cs" />
     <Compile Include="backtracking\optional.cs" />
     <Compile Include="cardinals\matches_max.cs" />

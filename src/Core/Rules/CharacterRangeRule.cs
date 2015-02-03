@@ -41,7 +41,7 @@
 
         static Match<char> MovePositionAndReturn(StringInput input)
         {
-            var result = new Match<char>(input.Current);
+            var result = new Match<char>(input.Current, input.Position, 1);
             input.Position++;
             return result;
         }

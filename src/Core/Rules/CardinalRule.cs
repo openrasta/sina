@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 
 namespace OpenRasta.Sina.Rules
 {
@@ -28,6 +29,8 @@ namespace OpenRasta.Sina.Rules
 
             var originalPosition = input.Position;
             var i = 0;
+            Stack<Func<StringInput, Match<IEnumerable<T>>>> retries =
+                new Stack<Func<StringInput, Match<IEnumerable<T>>>>();
 
             do
             {
@@ -37,24 +40,86 @@ namespace OpenRasta.Sina.Rules
                     if (maxCapacity == -1 || i < maxCapacity) break;
                     return Fail(input, originalPosition);
                 }
-                results.Add(match.Value);
 
                 i++;
+
+                if (i >= _minimum)
+                {
+                    if (match.Backtrack != null)
+                        retries.Push(BacktrackFromMatch(match, results, i-1));
+                }
+                if (i > _minimum)
+                    retries.Push(BacktrackValuesBeforeMatch(originalPosition, match, results, i-1));
+                results.Add(match.Value);
             }
             while (maxCapacity == -1 || i < maxCapacity);
 
-            return (_minimum != -1 && i < _minimum)
+
+            var failed = _minimum != -1 && i < _minimum;
+            //var resultValues = results.Select(_ => _.Value).ToArray();
+            return failed
                        ? Fail(input, originalPosition)
-                       : new Match<IEnumerable<T>>(results)
+                       : new Match<IEnumerable<T>>(results, originalPosition, input.Position - originalPosition)
                        {
-                           Backtrack = PrepareBacktrackIfNeeded(i)
+                           Backtrack = ExecuteBacktrackStack(retries)
                        };
         }
 
-        Func<StringInput, Match<IEnumerable<T>>> PrepareBacktrackIfNeeded(int i)
+        Func<StringInput, Match<IEnumerable<T>>> BacktrackValuesBeforeMatch(int originalPosition, Match<T> match, List<T> values, int length)
         {
-            if (i == _minimum) return null;
-            return _ => MatchWithMax(_, i - 1);
+            return _=>
+                new Match<IEnumerable<T>>(
+                Realize(values, 0, length), originalPosition, match.Position - originalPosition);
+        }
+
+        Func<StringInput, Match<IEnumerable<T>>> ExecuteBacktrackStack(Stack<Func<StringInput, Match<IEnumerable<T>>>> retries)
+        {
+            return input =>
+            {
+                Match<IEnumerable<T>> next;
+                do
+                {
+                    next = retries.Pop()(input);
+
+                }
+                while (next.Length > 0 && next.IsMatch == false);
+
+                return next.IsMatch
+                           ? new Match<IEnumerable<T>>(next.Value, next.Position, next.Length)
+                           {
+                               Backtrack = ExecuteBacktrackStack(retries)
+                           }
+                           : next;
+            };
+        }
+
+        Func<StringInput, Match<IEnumerable<T>>> BacktrackFromMatch(Match<T> lastMatch, List<T> values, int length)
+        {
+            return input =>
+            {
+                input.Position = lastMatch.Position;
+                var newMatch = lastMatch.Backtrack(input);
+                return newMatch.IsMatch
+                           ? new Match<IEnumerable<T>>(Realize(values, 0, length),
+                                                       lastMatch.Position,
+                                                       input.Position)
+                           : Match<IEnumerable<T>>.None;
+            };
+        }
+
+        static T[] Realize(List<T> values, int index, int length)
+        {
+            var result = new T[length];
+            values.CopyTo(index, result, 0, length);
+
+            return result;
+        }
+
+
+        Func<StringInput, Match<IEnumerable<T>>> PrepareBacktrack(List<Match<T>> results, bool useLastItemBacktrack)
+        {
+            if (results.Count == _minimum) return null;
+            return _ => MatchWithMax(_, results.Count - 1);
         }
 
         public override string ToString()
@@ -62,6 +127,11 @@ namespace OpenRasta.Sina.Rules
             return string.Format("{0}*{1}({2})", ToString(_minimum), ToString(_maximum), _rule);
         }
 
+        static Match<IEnumerable<T>> FailNotEnough(StringInput input, int originalPosition)
+        {
+            input.Position = originalPosition;
+            return Match<IEnumerable<T>>.None;
+        }
         static Match<IEnumerable<T>> Fail(StringInput input, int originalPosition)
         {
             input.Position = originalPosition;

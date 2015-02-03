@@ -11,8 +11,15 @@
 
         public override Match<T> Match(StringInput input)
         {
+            var originalPosition = input.Position;
             var match = _rule.Match(input);
-            return match.IsMatch ? new Match<T>(default(T)) { Backtrack = match.Backtrack } : match;
+            return match.IsMatch ? new Match<T>(
+                default(T),
+                originalPosition,
+                input.Position - originalPosition)
+            {
+                Backtrack = match.Backtrack
+            } : match;
         }
 
         public static Rule<T> operator +(NonCapturingRule<T> left, Rule<T> right)

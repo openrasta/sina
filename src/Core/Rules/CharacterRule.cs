@@ -37,7 +37,7 @@ namespace OpenRasta.Sina.Rules
                 input.Current != _character)
                 return Match<char>.None;
 
-            var match = new Match<char>(input.Current);
+            var match = new Match<char>(input.Current, input.Position, 1);
             input.Position++;
             return match;
         }

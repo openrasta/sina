@@ -12,13 +12,14 @@
 
         public override Match<T?> Match(StringInput input)
         {
+            var originalPosition = input.Position;
             var match = _rule.Match(input);
             return match.IsMatch
-                ? new Match<T?>(match.Value)
+                ? new Match<T?>(match.Value, originalPosition, input.Position-originalPosition)
                 {
-                    Backtrack = _ => Match<T?>.Empty
+                    Backtrack = _ => Match<T?>.Empty(originalPosition)
                 }
-                : Match<T?>.Empty;
+                : Match<T?>.Empty(originalPosition);
         }
 
         public override string ToString()

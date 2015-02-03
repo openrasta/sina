@@ -50,7 +50,7 @@ namespace OpenRasta.Sina.Rules
 
             return (_minimum != -1 && i < _minimum)
                        ? Fail(input, originalPosition)
-                       : new Match<string>(builder.ToString())
+                       : new Match<string>(builder.ToString(), originalPosition, input.Position)
                        {
                            Backtrack = PrepareBacktrackIfPossible(i)
                        };

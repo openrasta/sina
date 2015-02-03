@@ -15,9 +15,11 @@ namespace OpenRasta.Sina.Rules
 
         public override Match<TResult> Match(StringInput input)
         {
+            var originalPosition = input.Position;
             var match = _rule.Match(input);
             return match.IsMatch
-                       ? new Match<TResult>(_converter(match.Value))
+                       ? new Match<TResult>(_converter(match.Value),
+                           originalPosition, input.Position - originalPosition)
                        : Match<TResult>.None;
         }
 

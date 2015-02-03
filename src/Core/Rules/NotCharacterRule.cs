@@ -26,7 +26,7 @@ namespace OpenRasta.Sina.Rules
                 _isForbisdden(input.Current))
                 return Match<char>.None;
 
-            var match = new Match<char>(input.Current);
+            var match = new Match<char>(input.Current, input.Position, 1);
             input.Position++;
             return match;
         }
