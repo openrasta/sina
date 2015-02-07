@@ -17,7 +17,7 @@ namespace Tests.characters
         [Fact]
         public void matches()
         {
-            result.ShouldMatch("ab");
+            result.ShouldMatch("ab", 0,2);
         }
 
         [Fact]

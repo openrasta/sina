@@ -27,7 +27,7 @@ namespace Tests.combinators
         [Fact]
         public void result_is_correct()
         {
-            result.ShouldMatch("()");
+            result.ShouldMatch("()", 0, 2);
         }
     }
 }

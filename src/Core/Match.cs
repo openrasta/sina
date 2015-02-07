@@ -11,12 +11,13 @@ namespace OpenRasta.Sina
             return new Match<T>(default(T), position, 0);
         }
 
-        public Match(T value, int position, int length)
+        public Match(T value, int position, int length, Func<StringInput,Match<T>> backtrack = null)
         {
             Value = value;
             Position = position;
             Length = length;
             IsMatch = true;
+            Backtrack = backtrack;
         }
 
         Match()

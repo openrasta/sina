@@ -22,7 +22,7 @@ namespace Tests.alternates
         [Fact]
         public void matches()
         {
-            result.ShouldMatch('b');
+            result.ShouldMatch('b', 0, 1);
         }
     }
 }

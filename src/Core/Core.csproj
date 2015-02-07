@@ -40,8 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbnfGrammar.cs" />
-    <Compile Include="ConditionRule.cs" />
+    <Compile Include="Rules\ConditionRule.cs" />
     <Compile Include="RuleBuilder.cs" />
+    <Compile Include="Rules\Extensions.cs" />
     <Compile Include="Rules\NonCapturingRule.cs" />
     <Compile Include="Rules\NotCharacterRule.cs" />
     <Compile Include="Rules\AlternateRule.cs" />
@@ -57,7 +58,6 @@
     <Compile Include="Rules\OptionalValueTypeRule.cs" />
     <Compile Include="Rules\ReductionRule.cs" />
     <Compile Include="Rules\CardinalRule.cs" />
-    <Compile Include="Rules\CadinalToStringRule.cs" />
     <Compile Include="Rules\Rule.cs" />
     <Compile Include="RulesExtensions.cs" />
     <Compile Include="StringInput.cs" />

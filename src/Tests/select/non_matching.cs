@@ -5,19 +5,19 @@ using Xunit;
 
 namespace Tests.@select
 {
-    public class non_matching
+    public class non_matching : contexts.parsing_text_to<bool>
     {
-        Match<bool> match;
-
         public non_matching()
         {
-            match = Grammar.Character('a').Select(_ => true).Match("b");
+            given_rule(Grammar.Character('a').Select(_ => true));
+            when_matching("b");
         }
 
         [Fact]
         public void should_fail()
         {
-            match.IsMatch.ShouldBeFalse();
+            result.ShouldNotMatch();
+            input.Position.ShouldEqual(0);
         }
     }
 }

@@ -30,25 +30,37 @@ namespace OpenRasta.Sina.Rules
 
         public override Match<T> Match(StringInput input)
         {
-            return Match(input, 0);
+            return Match(input, 0, input.Position);
         }
 
-        Match<T> Match(StringInput input, int firstItemToTry)
+        Match<T> Match(StringInput input, int firstItemToTry, int inputPosition)
         {
-            var oldPosition = input.Position;
-
             for (var i = firstItemToTry; i < _rules.Length; i++)
             {
+                input.Position = inputPosition;
                 var match = _rules[i].Match(input);
 
-                if (match.IsMatch) return new Match<T>(match.Value, oldPosition, match.Length)
-                {
-                    Backtrack = _ => Match(_, firstItemToTry + 1)
-                };
-
-                input.Position = oldPosition;
+                if (match.IsMatch)
+                    return new Match<T>(match.Value, inputPosition, match.Length)
+                    {
+                        Backtrack = PrepareBacktrack(i, match)
+                    };
             }
             return Match<T>.None;
+        }
+
+        Func<StringInput, Match<T>> PrepareBacktrack(int currentItemPosition, Match<T> currentItemMatch)
+        {
+            if (currentItemMatch.Backtrack == null)
+                return _ => Match(_, currentItemPosition + 1, currentItemMatch.Position);
+            return input =>
+            {
+                input.Position = currentItemMatch.Position;
+                var newMatch = currentItemMatch.Backtrack(input);
+                return newMatch.IsMatch
+                           ? new Match<T>(newMatch.Value, newMatch.Position, newMatch.Length, PrepareBacktrack(currentItemPosition, newMatch))
+                           : Match(input, currentItemPosition + 1, input.Position);
+            };
         }
 
         public override string ToString()

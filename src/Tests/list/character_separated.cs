@@ -4,7 +4,7 @@ using OpenRasta.Sina;
 using Should;
 using Xunit;
 
-namespace Tests.joined
+namespace Tests.list
 {
     public class character_separated
         : contexts.parsing_text_to<IEnumerable<string>>
@@ -19,17 +19,22 @@ namespace Tests.joined
         [Fact]
         public void one_repetition()
         {
-            results.ElementAt(0).IsMatch.ShouldBeTrue();
-            results.ElementAt(0).Value.Single().ShouldEqual("ab");
+            results[0].IsMatch.ShouldBeTrue();
+            results[0].Value.Single().ShouldEqual("ab");
+            results[0].Position.ShouldEqual(0);
+            results[0].Length.ShouldEqual(2);
+            inputs[0].Position.ShouldEqual(2);
         }
 
         [Fact]
         public void multiple()
         {
-            results.ElementAt(1).IsMatch.ShouldBeTrue();
-            var vals = results.ElementAt(1).Value.ToArray();
+            results[1].IsMatch.ShouldBeTrue();
+            var vals = results[1].Value.ToArray();
             vals.ShouldAllEqual("ab");
-
+            results[1].Position.ShouldEqual(0);
+            results[1].Length.ShouldEqual(8);
+            inputs[1].Position.ShouldEqual(8);
         }
     }
 }

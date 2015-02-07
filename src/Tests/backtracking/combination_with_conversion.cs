@@ -3,6 +3,7 @@ using System.Linq;
 using OpenRasta.Sina;
 using Should;
 using Tests.contexts;
+using Xunit;
 
 namespace Tests.backtracking
 {
@@ -15,11 +16,12 @@ namespace Tests.backtracking
                        select Tuple.Create(onePlus,one));
             when_matching("aa");
         }
-
+        
+        [Fact]
         public void first_group_backtracked()
         {
-            results.First().IsMatch.ShouldBeTrue();
-            results.First().Value.ShouldEqual(Tuple.Create("a", "a"));
+            result.ShouldMatch(Tuple.Create("a", "a"), 0, 2);
         }
+
     }
 }

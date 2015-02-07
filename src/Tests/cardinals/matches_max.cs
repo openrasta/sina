@@ -19,8 +19,12 @@ namespace Tests.cardinals
         [Fact]
         public void success()
         {
-            results[0].Value.ShouldBeEmpty();
+            results[0].ShouldMatch(new int[0], 0, 0);
             results[1].Value.ElementAt(0).ShouldEqual('1');
+            results[1].Position.ShouldEqual(0);
+            results[1].Length.ShouldEqual(1);
+            inputs[1].Position.ShouldEqual(1);
+
         }
     }
 }

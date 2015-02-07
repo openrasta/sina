@@ -22,7 +22,7 @@ namespace Tests.characters
         [Fact]
         public void doesnt_match_excluded_character()
         {
-            results.First().IsMatch.ShouldBeFalse();
+            results[0].ShouldNotMatch();
         }
 
         [Fact]

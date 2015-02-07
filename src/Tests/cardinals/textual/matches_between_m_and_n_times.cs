@@ -23,14 +23,14 @@ namespace Tests.cardinals.textual
         [Fact]
         public void matches_maximum()
         {
-            results[2].ShouldMatch("zz");
-            results[3].ShouldMatch("zz");
+            results[2].ShouldMatch("zz",0,2);
+            results[3].ShouldMatch("zz",0,2);
         }
 
         [Fact]
         public void matches_minimum()
         {
-            results[1].ShouldMatch("z");
+            results[1].ShouldMatch("z", 0, 1);
         }
     }
 }

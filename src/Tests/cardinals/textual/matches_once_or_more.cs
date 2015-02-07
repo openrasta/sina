@@ -1,5 +1,6 @@
 ﻿using OpenRasta.Sina;
 using OpenRasta.Sina.Rules;
+using Should;
 using Tests.contexts;
 using Xunit;
 
@@ -16,8 +17,10 @@ namespace Tests.cardinals.textual
         [Fact]
         public void match_inside_range()
         {
-            results[1].ShouldMatch("z");
-            results[2].ShouldMatch("zz");
+            results[1].ShouldMatch("z",0,1);
+            inputs[1].Position.ShouldEqual(1);
+            results[2].ShouldMatch("zz", 0, 2);
+            inputs[2].Position.ShouldEqual(2);
         }
 
         [Fact]

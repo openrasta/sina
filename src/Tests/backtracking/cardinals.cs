@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using OpenRasta.Sina;
+using OpenRasta.Sina.Rules;
 using Should;
 using Xunit;
 
@@ -12,7 +14,7 @@ namespace Tests.backtracking
         {
             given_rule(
                 (Grammar.String("http") / Grammar.String("http://"))
-                .Range(1,1)
+                .Range(1, 1)
                 .End());
             when_matching("http://");
         }
@@ -20,7 +22,9 @@ namespace Tests.backtracking
         [Fact]
         public void successful()
         {
-            result.IsMatch.ShouldBeTrue();
+            result.Value.Single().ShouldEqual("http://");
+            result.ShouldMatch(0, 7, "http://");
+            input.Position.ShouldEqual(7);
         }
     }
 }

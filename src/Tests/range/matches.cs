@@ -25,9 +25,9 @@ namespace Tests.range
         public void result_is_a_match()
         {
             results.Select(_ => _.IsMatch).ShouldAllEqual(true);
-            results[0].Value.ShouldEqual('a');
-            results[1].Value.ShouldEqual('x');
-            results[2].Value.ShouldEqual('z');
+            results[0].ShouldMatch('a', 0, 1);
+            results[1].ShouldMatch('x', 0, 1);
+            results[2].ShouldMatch('z', 0, 1);
         }
     }
 }

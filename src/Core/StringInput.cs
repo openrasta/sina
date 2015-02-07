@@ -2,6 +2,8 @@
 {
     public class StringInput
     {
+        int _position;
+
         public StringInput(string text)
         {
             Text = text;
@@ -12,7 +14,12 @@
             get { return Text[Position]; }
         }
 
-        public int Position { get; set; }
+        public int Position
+        {
+            get { return _position; }
+            set { _position = value; }
+        }
+
         public string Text { get; private set; }
 
         public static implicit operator StringInput(string text)

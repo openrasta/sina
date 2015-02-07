@@ -11,7 +11,7 @@ namespace Tests.conditional
     {
         public match()
         {
-            given_rule(from any in Grammar.AnyCharacter().Select(_=>true)
+            given_rule(from any in Grammar.AnyCharacter().Any().Select(_=>true)
                        where any
                        select "yay");
             when_matching("any old stuff");
@@ -20,8 +20,10 @@ namespace Tests.conditional
         [Fact]
         public void success()
         {
-            result.IsMatch.ShouldBeTrue();
-            result.Value.ShouldEqual("yay");
+            result.ShouldMatch("yay",0,13);
+            input.Position.ShouldEqual(13);
+
         }
+        
     }
 }

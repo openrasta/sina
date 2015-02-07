@@ -5,25 +5,24 @@ using Xunit;
 
 namespace Tests.select
 {
-    public class matching
+    public class matching  : contexts.parsing_text_to<bool>
     {
-        Match<bool> match;
-
         public matching()
         {
-            match = Grammar.Character('a').Select(_ => true).Match("a");
+            given_rule(Grammar.Character('a').Select(_ => true));
+            when_matching("a");
         }
 
         [Fact]
         public void is_successful()
         {
-            match.IsMatch.ShouldBeTrue();
+            result.ShouldMatch(true, 0, 1);
         }
 
         [Fact]
-        public void value_is_correct()
+        public void positioning_correct()
         {
-            match.Value.ShouldBeTrue();
+            input.Position.ShouldEqual(1);
         }
     }
 }

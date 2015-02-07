@@ -1,4 +1,7 @@
-﻿namespace OpenRasta.Sina.Rules
+﻿using System;
+using System.Collections.Generic;
+
+namespace OpenRasta.Sina.Rules
 {
     public class OptionalValueTypeRule<T> : Rule<T?> where T : struct
     {

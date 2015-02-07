@@ -8,7 +8,7 @@ namespace Tests.conditional
     {
         public not_match()
         {
-            given_rule(from any in Grammar.AnyCharacter().Select(_ => false)
+            given_rule(from any in Grammar.AnyCharacter().Any().Select(_ => false)
                        where any
                        select "yay");
             when_matching("any old stuff");
@@ -18,6 +18,7 @@ namespace Tests.conditional
         public void fails()
         {
             result.IsMatch.ShouldBeFalse();
+            input.Position.ShouldEqual(0);
         }
     }
 }

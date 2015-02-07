@@ -1,6 +1,9 @@
-﻿namespace OpenRasta.Sina.Rules
+﻿using System;
+using System.Collections.Generic;
+
+namespace OpenRasta.Sina.Rules
 {
-    public class OptionalReferenceTypeRule<T> : Rule<T> where T:class
+    public class OptionalReferenceTypeRule<T> : Rule<T> where T : class
     {
         readonly IParser<T> _rule;
 
@@ -13,10 +16,16 @@
         {
             var originalPosition = input.Position;
             var match = _rule.Match(input);
+
+            var stack = new Stack<Func<StringInput, Match<T>>>();
+            stack.Push(_ => Match<T>.Empty(originalPosition));
+
+            if (match.Backtrack != null)
+                stack.Push(match.Backtrack);
             return new Match<T>(match.IsMatch ? match.Value : default(T),
-                originalPosition, input.Position-originalPosition)
+                originalPosition, input.Position - originalPosition)
             {
-                Backtrack = _ => Match<T>.Empty(originalPosition)
+                Backtrack = stack.AsBacktrack()
             };
         }
 

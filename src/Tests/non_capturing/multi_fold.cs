@@ -17,8 +17,7 @@ namespace Tests.non_capturing
         [Fact]
         public void success()
         {
-            result.IsMatch.ShouldBeTrue();
-            result.Value.ShouldEqual("a=");
+            result.ShouldMatch("a=", 0, 4);
         }
     }
 }

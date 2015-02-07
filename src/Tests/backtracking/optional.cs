@@ -10,7 +10,7 @@ namespace Tests.backtracking
     {
         public optional()
         {
-            given_rule(Grammar.Character('a').Optional() + Grammar.Character('a'));
+            given_rule((Grammar.Character('a').Optional() + Grammar.Character('a')).End());
             when_matching("a");
         }
 

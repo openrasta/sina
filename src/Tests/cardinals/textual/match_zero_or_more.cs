@@ -17,9 +17,9 @@ namespace Tests.cardinals.textual
         [Fact]
         public void match_inside_range()
         {
-            results[0].ShouldMatch(string.Empty);
-            results[1].ShouldMatch("z");
-            results[2].ShouldMatch("zz");
+            results[0].ShouldMatch(string.Empty, 0, 0);
+            results[1].ShouldMatch("z", 0, 1);
+            results[2].ShouldMatch("zz", 0, 2);
         }
 
         [Fact]

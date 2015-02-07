@@ -15,8 +15,8 @@ namespace Tests.conditional
         [Fact]
         public void matches_portion_not_in()
         {
-            result.IsMatch.ShouldBeTrue();
-            result.Value.ShouldEqual("abc");
+            result.ShouldMatch("abc",0,3);
+            input.Position.ShouldEqual(3);
         }
     }
 }

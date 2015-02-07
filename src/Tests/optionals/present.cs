@@ -18,8 +18,8 @@ namespace Tests.optionals
         [Fact]
         public void is_match()
         {
-            result.ShouldMatch("ab");
-            results[1].ShouldMatch("b");
+            result.ShouldMatch("ab", 0, 2);
+            results[1].ShouldMatch("b", 0, 1);
         }
 
         [Fact]

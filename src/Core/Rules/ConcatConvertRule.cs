@@ -17,10 +17,17 @@ namespace OpenRasta.Sina.Rules
 
         public override Match<TResult> Match(StringInput input)
         {
-            Func<StringInput,Match<TLeft>> leftParser = _left.Match;
+            return MatchFromLeft(input, _left.Match);
+        }
+
+        Match<TResult> MatchFromLeft(StringInput input, Func<StringInput, Match<TLeft>> leftParser)
+        {
+            if (leftParser == null) return Match<TResult>.None;
+
             Match<TRight> rightMatch;
             Match<TLeft> leftMatch;
             var originalPosition = input.Position;
+
             do
             {
                 input.Position = originalPosition;
@@ -33,11 +40,43 @@ namespace OpenRasta.Sina.Rules
             }
             while (leftParser != null && rightMatch.IsMatch == false);
 
-            return rightMatch.IsMatch 
-                ? new Match<TResult>(_converter(leftMatch.Value, rightMatch.Value),
-                    originalPosition, input.Position-originalPosition
-                    )
-                : Match<TResult>.None;
+            return rightMatch.IsMatch
+                       ? ReturnCombined(input, leftMatch, rightMatch)
+                       : Match<TResult>.None;
+        }
+
+        Match<TResult> MatchFromRight(StringInput input, Match<TLeft> leftMatch, Func<StringInput, Match<TRight>> rightParser)
+        {
+            var rightMatch = rightParser(input);
+            return rightMatch.IsMatch
+                       ? ReturnCombined(input, leftMatch, rightMatch)
+                       : MatchFromLeft(input, leftMatch.Backtrack);
+        }
+
+        Match<TResult> ReturnCombined(StringInput input, Match<TLeft> leftMatch, Match<TRight> rightMatch)
+        {
+            return new Match<TResult>(
+                _converter(leftMatch.Value, rightMatch.Value),
+                leftMatch.Position,
+                input.Position - leftMatch.Position,
+                PrepareBacktrack(leftMatch, rightMatch));
+        }
+
+        Func<StringInput, Match<TResult>> PrepareBacktrack(Match<TLeft> leftMatch, Match<TRight> rightMatch)
+        {
+            if (rightMatch.Backtrack == null && leftMatch.Backtrack == null)
+                return null;
+            if (rightMatch.Backtrack == null)
+                return input =>
+                {
+                    input.Position = leftMatch.Position;
+                    return MatchFromLeft(input, leftMatch.Backtrack);
+                };
+            return input =>
+            {
+                input.Position = rightMatch.Position;
+                return MatchFromRight(input, leftMatch, rightMatch.Backtrack);
+            };
         }
 
         public override string ToString()

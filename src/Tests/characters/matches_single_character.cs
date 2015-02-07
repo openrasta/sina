@@ -16,7 +16,7 @@ namespace Tests.characters
         [Fact]
         public void is_successful()
         {
-            result.ShouldMatch('a');
+            result.ShouldMatch('a',0,1);
         }
 
         [Fact]

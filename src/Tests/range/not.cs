@@ -16,12 +16,14 @@ namespace Tests.range
         public void excluded_not_matched()
         {
             results[0].IsMatch.ShouldBeFalse();
+            inputs[0].Position.ShouldEqual(0);
+
         }
 
         [Fact]
         public void not_excluded_matched()
         {
-            results[1].IsMatch.ShouldBeTrue();
+            results[1].ShouldMatch('b', 0, 1);
         }
     }
 }

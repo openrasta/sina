@@ -10,16 +10,16 @@ namespace Tests.backtracking
     {
         public combination_to_string()
         {
-            given_rule(Grammar.AnyCharacter().Min(1) +
-                       Grammar.Character('a'));
+            given_rule((Grammar.AnyCharacter().Min(1)
+                        + Grammar.Character('a')).End());
             when_matching("aa");
         }
 
         [Fact]
         public void backtracks()
         {
-            results.First().IsMatch.ShouldBeTrue();
-            results.First().Value.ShouldEqual("aa");
+            result.ShouldMatch("aa", 0, 2);
+            input.Position.ShouldEqual(2);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Tests.optionals
         [Fact]
         public void is_match()
         {
-            result.ShouldMatch(null);
+            result.ShouldMatch(null,0,0);
         }
 
         [Fact]
