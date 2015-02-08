@@ -12,7 +12,7 @@ namespace Tests.cardinals
     {
         public matches_max()
         {
-            given_rule(Grammar.Range('0', '9').Select(_ => (int)_).Range(maximum: 1));
+            given_rule(Range('0', '9').Select(_ => (int)_).Max(1));
             when_matching(string.Empty, "1");
         }
 

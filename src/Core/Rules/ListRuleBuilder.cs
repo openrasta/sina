@@ -1,13 +1,12 @@
 using System.Collections.Generic;
-using OpenRasta.Sina.Rules;
 
-namespace OpenRasta.Sina
+namespace OpenRasta.Sina.Rules
 {
-    public class RuleBuilder<T>
+    public class ListRuleBuilder<T>
     {
         readonly Rule<T> _rule;
 
-        public RuleBuilder(Rule<T> rule)
+        public ListRuleBuilder(Rule<T> rule)
         {
             _rule = rule;
         }
@@ -17,7 +16,7 @@ namespace OpenRasta.Sina
             return from first in _rule
                    from followups in (from sep in separator
                                       from followup in _rule
-                                      select followup).Range()
+                                      select followup).Min(0)
                    select NewList(first, followups);
         }
 

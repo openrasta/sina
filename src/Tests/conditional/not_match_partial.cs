@@ -8,7 +8,7 @@ namespace Tests.conditional
     {
         public not_match_partial()
         {
-            given_rule(Grammar.Not(' ').Any());
+            given_rule(Not(' ').Any());
             when_matching("abc ");
         }
 

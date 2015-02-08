@@ -8,7 +8,7 @@ namespace Tests.range
     {
         public no_match_for_empty()
         {
-            given_rule(Grammar.Range('a', 'z'));
+            given_rule(Range('a', 'z'));
             when_matching(string.Empty);
         }
 

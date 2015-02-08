@@ -10,9 +10,9 @@ namespace Tests.combinators
     {
         public two_operators_with_transformation()
         {
-            given_rule(from openParenthesis in Grammar.Character('(')
+            given_rule(from openParenthesis in Character('(')
                                                       .Select(c => c + string.Empty)
-                       from closeParenthesis in Grammar.Character(')')
+                       from closeParenthesis in Character(')')
                        select openParenthesis + closeParenthesis);
 
             when_matching("()");

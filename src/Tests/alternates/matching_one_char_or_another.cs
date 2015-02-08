@@ -8,8 +8,8 @@ namespace Tests.alternates
     {
         public matching_one_char_or_another()
         {
-            given_rule(AbnfGrammar.Alternates(Grammar.Character('a'), 
-                                              Grammar.Character('b')));
+            given_rule(Alternates(Character('a'), 
+                                              Character('b')));
             when_matching("ba");
         }
 

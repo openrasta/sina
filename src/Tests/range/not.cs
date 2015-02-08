@@ -8,7 +8,7 @@ namespace Tests.range
     {
         public not()
         {
-            given_rule(!Grammar.Character('a'));
+            given_rule(!Character('a'));
             when_matching("a","b");
         }
 

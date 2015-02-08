@@ -9,7 +9,7 @@ namespace Tests.backtracking
     {
         public condition()
         {
-            given_rule((from val in Grammar.String("seb") / Grammar.String("sebastien")
+            given_rule((from val in String("seb") / String("sebastien")
                         where val == "sebastien"
                         select val));
             when_matching("sebastien");

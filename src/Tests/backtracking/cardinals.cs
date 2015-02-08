@@ -13,7 +13,7 @@ namespace Tests.backtracking
         public cardinals()
         {
             given_rule(
-                (Grammar.String("http") / Grammar.String("http://"))
+                (String("http") / String("http://"))
                 .Range(1, 1)
                 .End());
             when_matching("http://");

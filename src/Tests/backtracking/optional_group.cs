@@ -11,8 +11,8 @@ namespace Tests.backtracking
         public optional_group()
         {
             given_rule(
-                       ((Grammar.String("ab") / Grammar.String("a"))
-                            .Optional() + Grammar.String("b")).End());
+                       ((String("ab") / String("a"))
+                            .Optional() + String("b")).End());
             when_matching("ab");
         }
 

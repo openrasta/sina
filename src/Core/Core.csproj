@@ -41,7 +41,7 @@
   <ItemGroup>
     <Compile Include="AbnfGrammar.cs" />
     <Compile Include="Rules\ConditionRule.cs" />
-    <Compile Include="RuleBuilder.cs" />
+    <Compile Include="Rules\ListRuleBuilder.cs" />
     <Compile Include="Rules\Extensions.cs" />
     <Compile Include="Rules\NonCapturingRule.cs" />
     <Compile Include="Rules\NotCharacterRule.cs" />

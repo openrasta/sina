@@ -10,7 +10,7 @@ namespace Tests.range
     {
         public matches()
         {
-            given_rule(Grammar.Range('a', 'z'));
+            given_rule(Range('a', 'z'));
 
             when_matching("a", "x", "z");
         }

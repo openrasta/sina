@@ -10,7 +10,7 @@ namespace Tests.cardinals.textual
     {
         public match_zero_or_more()
         {
-            given_rule(Grammar.Character('z').Min(0));
+            given_rule(Character('z').Min(0));
             when_matching("a", "z", "zz");
         }
 

@@ -9,7 +9,7 @@ namespace Tests.optionals
     {
         public absent()
         {
-            given_rule(Grammar.String("Sister").Optional());
+            given_rule(String("Sister").Optional());
             when_matching("Maria Rainer");
         }
 

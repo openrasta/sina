@@ -9,7 +9,7 @@ namespace Tests.strings
     {
         public matches()
         {
-            given_rule(Grammar.String("test"));
+            given_rule(String("test"));
             when_matching("test");
         }
 

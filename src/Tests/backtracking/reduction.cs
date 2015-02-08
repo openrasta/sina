@@ -8,7 +8,7 @@ namespace Tests.backtracking
     {
         public reduction()
         {
-            given_rule((Grammar.String("a") / Grammar.String("aa"))
+            given_rule((String("a") / String("aa"))
                            .Select(_ => "match").End());
             when_matching("aa");
         }

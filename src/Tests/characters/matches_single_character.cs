@@ -9,7 +9,7 @@ namespace Tests.characters
     {
         public matches_single_character()
         {
-            given_rule(Grammar.Character('a'));
+            given_rule(Character('a'));
             when_matching("a");
         }
 

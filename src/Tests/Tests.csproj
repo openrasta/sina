@@ -62,6 +62,7 @@
     <Compile Include="characters\not.cs" />
     <Compile Include="characters\no_match_at_end.cs" />
     <Compile Include="backtracking\combination_with_conversion.cs" />
+    <Compile Include="combinators\plus.cs" />
     <Compile Include="combinators\three_operators_with_transformation.cs" />
     <Compile Include="combinators\two_operators_with_transformation.cs" />
     <Compile Include="conditional\match.cs" />

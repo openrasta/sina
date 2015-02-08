@@ -40,9 +40,9 @@ namespace OpenRasta.Sina.Rules
             }
             while (leftParser != null && rightMatch.IsMatch == false);
 
-            return rightMatch.IsMatch
-                       ? ReturnCombined(input, leftMatch, rightMatch)
-                       : Match<TResult>.None;
+            if (rightMatch.IsMatch) return ReturnCombined(input, leftMatch, rightMatch);
+            input.Position = originalPosition;
+            return Match<TResult>.None;
         }
 
         Match<TResult> MatchFromRight(StringInput input, Match<TLeft> leftMatch, Func<StringInput, Match<TRight>> rightParser)

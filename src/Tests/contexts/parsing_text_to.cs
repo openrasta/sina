@@ -5,7 +5,7 @@ using OpenRasta.Sina.Rules;
 
 namespace Tests.contexts
 {
-    public abstract class parsing_text_to<T>
+    public abstract class parsing_text_to<T> : AbnfGrammar
     {
         protected StringInput input;
         protected StringInput[] inputs;

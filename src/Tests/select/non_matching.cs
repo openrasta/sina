@@ -9,7 +9,7 @@ namespace Tests.@select
     {
         public non_matching()
         {
-            given_rule(Grammar.Character('a').Select(_ => true));
+            given_rule(Character('a').Select(_ => true));
             when_matching("b");
         }
 

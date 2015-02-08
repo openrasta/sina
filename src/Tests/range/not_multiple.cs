@@ -8,7 +8,7 @@ namespace Tests.range
     {
         public not_multiple()
         {
-            given_rule(Grammar.Not('a','b'));
+            given_rule(Not('a','b'));
             when_matching("a", "b", "c");
         }
 

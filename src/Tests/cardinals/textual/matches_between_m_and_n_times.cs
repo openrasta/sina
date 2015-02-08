@@ -10,7 +10,7 @@ namespace Tests.cardinals.textual
     {
         public matches_between_m_and_n_times()
         {
-            given_rule(Grammar.Character('z').Range(1, 2));
+            given_rule(Character('z').Range(1, 2));
             when_matching("a", "z", "zz", "zzz");
         }
 

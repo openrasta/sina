@@ -12,7 +12,7 @@ namespace Tests.characters
     {
         public not()
         {
-            given_rule(Grammar.Not('a'));
+            given_rule(Not('a'));
             when_matching("a", "b", "c", "d", "e", "f", "g",
                           "h", "i", "j", "k", "l", "m", "n",
                           "o", "p", "q", "r", "s", "t", "u",

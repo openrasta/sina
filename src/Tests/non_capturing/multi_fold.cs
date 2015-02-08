@@ -10,7 +10,7 @@ namespace Tests.non_capturing
         public multi_fold()
         {
             CharacterRule dquote = '"';
-            given_rule(-dquote + Grammar.Character('a') + -dquote + Grammar.Character('='));
+            given_rule(-dquote + Character('a') + -dquote + Character('='));
             when_matching("\"a\"=");
         }
 

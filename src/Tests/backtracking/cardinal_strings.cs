@@ -9,7 +9,7 @@ namespace Tests.backtracking
     {
         public cardinal_strings()
         {
-            given_rule((Grammar.Character('a') / 'b').Range(2, 2).End());
+            given_rule((Character('a') / 'b').Range(2, 2).End());
             when_matching("bb");
         }
 

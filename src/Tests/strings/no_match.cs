@@ -8,7 +8,7 @@ namespace Tests.strings
     {
         public no_match()
         {
-            given_rule(Grammar.String("test"));
+            given_rule(String("test"));
             when_matching("something else");
         }
 

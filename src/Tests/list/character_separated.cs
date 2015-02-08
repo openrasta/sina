@@ -12,7 +12,7 @@ namespace Tests.list
         public character_separated()
         {
             given_rule(
-                (Grammar.Character('a') + 'b').List(' '));
+                (Character('a') + 'b').List(' '));
             when_matching("ab", "ab ab ab");
         }
 

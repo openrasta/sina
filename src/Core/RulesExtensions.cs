@@ -8,9 +8,9 @@ namespace OpenRasta.Sina
 {
     public static class RulesExtensions
     {
-        public static RuleBuilder<T> List<T>(this Rule<T> rule)
+        public static ListRuleBuilder<T> List<T>(this Rule<T> rule)
         {
-            return new RuleBuilder<T>(rule);
+            return new ListRuleBuilder<T>(rule);
         }
         public static Rule<IEnumerable<T>> List<T>(this Rule<T> rule, char separator)
         {
@@ -38,6 +38,11 @@ namespace OpenRasta.Sina
             return new CardinalRule<T>(rule, minimum);
         }
 
+        public static Rule<IEnumerable<T>> Max<T>(this Rule<T> rule, int maximum)
+        {
+            return new CardinalRule<T>(rule, 0, maximum);
+        }
+
         public static Rule<char?> Optional(this Rule<char> parser)
         {
             return new OptionalValueTypeRule<char>(parser);
@@ -47,7 +52,7 @@ namespace OpenRasta.Sina
             return new OptionalReferenceTypeRule<T>(parser);
         }
 
-        public static Rule<IEnumerable<T>> Range<T>(this Rule<T> rule, int minimum = 0, int maximum = -1)
+        public static Rule<IEnumerable<T>> Range<T>(this Rule<T> rule, int minimum, int maximum)
         {
             return new CardinalRule<T>(rule, minimum, maximum);
         }

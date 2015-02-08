@@ -9,7 +9,7 @@ namespace Tests.operators
     {
         public plus()
         {
-            given_rule(Grammar.Character('a') + Grammar.Character('b'));
+            given_rule(Character('a') + Character('b'));
             when_matching("ab");
         }
 

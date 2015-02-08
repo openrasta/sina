@@ -12,7 +12,7 @@ namespace Tests.cardinals
     {
         public matches_min()
         {
-            given_rule(Grammar.Range('0', '9').Select(_ => (int)_).Range(1));
+            given_rule(Range('0', '9').Select(_ => (int)_).Min(1));
             when_matching("1", "12");
         }
 

@@ -9,7 +9,7 @@ namespace Tests.characters
     {
         public no_match_at_end()
         {
-            given_rule(Grammar.Character('a'));
+            given_rule(Character('a'));
             when_matching(string.Empty);
         }
 

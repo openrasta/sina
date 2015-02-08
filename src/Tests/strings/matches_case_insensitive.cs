@@ -8,7 +8,7 @@ namespace Tests.strings
     {
         public matches_case_insensitive()
         {
-            given_rule(Grammar.String("test"));
+            given_rule(String("test"));
             when_matching("TEST");
         }
 
