@@ -14,12 +14,20 @@ namespace Tests.combinators
         {
 
             var ExtRelType = Not('"', '\'', ' ').Min(1);
-            var RegRelType = LowercaseAlpha.Min(1);// + (LowercaseAlpha / Digit / '.' / '-').Any();
+            var RegRelType = LowercaseAlpha + (LowercaseAlpha.Any() / Digit.Any());/// Digit;//+  (LowercaseAlpha / Digit).Any();// / '.' / '-');//.Any();
             var RelationType = RegRelType / ExtRelType;
 
-            var unfoldList = from first in RelationType select first;
-            given_rule(unfoldList.End());
-            when_matching("http://google.com");
+            var QuotedRelationTypes = from startQuote in DoubleQuote
+                                      from type in RelationType//.List(' ')
+                                      from endQuote in DoubleQuote
+                                      select type;
+            StringInput inp = "http://";
+            var match = RegRelType.End().Match(inp);
+            match.ShouldNotMatch();
+            inp.Position.ShouldEqual(0);
+            
+            given_rule(QuotedRelationTypes.End());
+            when_matching("\"http://google.com\"");
         }
 
         [Fact]
@@ -48,7 +56,7 @@ namespace Tests.combinators
         [Fact]
         public void result_is_correct()
         {
-            result.ShouldMatch("aa",0,4);
+            result.ShouldMatch("aa", 0, 4);
         }
     }
 }

@@ -26,7 +26,7 @@
             return new CharAlternateRule(range, new CharacterRule(alternate));
         }
 
-        public override Match<char> Match(StringInput input)
+        protected override Match<char> MatchCore(StringInput input)
         {
             return (input.Position < input.Text.Length && input.Current <= _to && input.Current >= _from)
                        ? MovePositionAndReturn(input)

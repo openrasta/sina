@@ -27,8 +27,7 @@ namespace OpenRasta.Sina.Rules
         }
 
 
-
-        public override Match<T> Match(StringInput input)
+        protected override Match<T> MatchCore(StringInput input)
         {
             return Match(input, 0, input.Position);
         }
@@ -43,22 +42,23 @@ namespace OpenRasta.Sina.Rules
                 if (match.IsMatch)
                     return new Match<T>(match.Value, inputPosition, match.Length)
                     {
-                        Backtrack = PrepareBacktrack(i, match)
+                        Backtrack = PrepareBacktrack(i, inputPosition,match)
                     };
             }
+            //input.Position = inputPosition;
             return Match<T>.None;
         }
 
-        Func<StringInput, Match<T>> PrepareBacktrack(int currentItemPosition, Match<T> currentItemMatch)
+        Func<StringInput, Match<T>> PrepareBacktrack(int currentItemPosition, int inputPosition, Match<T> currentItemMatch)
         {
             if (currentItemMatch.Backtrack == null)
                 return _ => Match(_, currentItemPosition + 1, currentItemMatch.Position);
             return input =>
             {
-                input.Position = currentItemMatch.Position;
+                input.Position = inputPosition;
                 var newMatch = currentItemMatch.Backtrack(input);
                 return newMatch.IsMatch
-                           ? new Match<T>(newMatch.Value, newMatch.Position, newMatch.Length, PrepareBacktrack(currentItemPosition, newMatch))
+                           ? new Match<T>(newMatch.Value, newMatch.Position, newMatch.Length, PrepareBacktrack(currentItemPosition, inputPosition,newMatch))
                            : Match(input, currentItemPosition + 1, input.Position);
             };
         }

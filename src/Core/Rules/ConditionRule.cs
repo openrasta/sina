@@ -13,7 +13,7 @@ namespace OpenRasta.Sina.Rules
             _selector = selector;
         }
 
-        public override Match<T> Match(StringInput input)
+        protected override Match<T> MatchCore(StringInput input)
         {
             return Match(input, _parser.Match);
         }
@@ -30,7 +30,7 @@ namespace OpenRasta.Sina.Rules
                 matcher = result.Backtrack;
             }
             while (matcher != null);
-            
+            //input.Position = originalPosition;
             return Match<T>.None;
         }
     }

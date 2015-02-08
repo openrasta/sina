@@ -13,7 +13,7 @@ namespace OpenRasta.Sina.Rules
             _rule = rule;
         }
 
-        public override Match<T?> Match(StringInput input)
+        protected override Match<T?> MatchCore(StringInput input)
         {
             var originalPosition = input.Position;
             var match = _rule.Match(input);

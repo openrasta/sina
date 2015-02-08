@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace OpenRasta.Sina.Rules
 {
@@ -15,7 +16,7 @@ namespace OpenRasta.Sina.Rules
             _converter = converter;
         }
 
-        public override Match<TResult> Match(StringInput input)
+        protected override Match<TResult> MatchCore(StringInput input)
         {
             return MatchFromLeft(input, _left.Match);
         }
@@ -27,14 +28,18 @@ namespace OpenRasta.Sina.Rules
             Match<TRight> rightMatch;
             Match<TLeft> leftMatch;
             var originalPosition = input.Position;
-
+            
             do
             {
                 input.Position = originalPosition;
                 leftMatch = leftParser(input);
                 leftParser = leftMatch.Backtrack;
 
-                if (!leftMatch.IsMatch) return Match<TResult>.None;
+                if (!leftMatch.IsMatch)
+                {
+                    input.Position = originalPosition;
+                    return Match<TResult>.None;
+                }
 
                 rightMatch = _right.Match(input);
             }
@@ -48,9 +53,9 @@ namespace OpenRasta.Sina.Rules
         Match<TResult> MatchFromRight(StringInput input, Match<TLeft> leftMatch, Func<StringInput, Match<TRight>> rightParser)
         {
             var rightMatch = rightParser(input);
-            return rightMatch.IsMatch
-                       ? ReturnCombined(input, leftMatch, rightMatch)
-                       : MatchFromLeft(input, leftMatch.Backtrack);
+            if (rightMatch.IsMatch) return ReturnCombined(input, leftMatch, rightMatch);
+            input.Position = leftMatch.Position;
+            return MatchFromLeft(input, leftMatch.Backtrack);
         }
 
         Match<TResult> ReturnCombined(StringInput input, Match<TLeft> leftMatch, Match<TRight> rightMatch)

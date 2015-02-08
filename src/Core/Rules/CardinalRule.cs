@@ -18,7 +18,7 @@ namespace OpenRasta.Sina.Rules
             _maximum = maximum;
         }
 
-        public override Match<IEnumerable<T>> Match(StringInput input)
+        protected override Match<IEnumerable<T>> MatchCore(StringInput input)
         {
             return MatchWithMax(input, _maximum);
         }
@@ -29,8 +29,7 @@ namespace OpenRasta.Sina.Rules
 
             var originalPosition = input.Position;
             var i = 0;
-            Stack<Func<StringInput, Match<IEnumerable<T>>>> retries =
-                new Stack<Func<StringInput, Match<IEnumerable<T>>>>();
+            var retries = new Stack<Func<StringInput, Match<IEnumerable<T>>>>();
 
             do
             {

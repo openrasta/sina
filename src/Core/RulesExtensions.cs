@@ -104,8 +104,7 @@ namespace OpenRasta.Sina
 
         class EndRule<T> : Rule<T>
         {
-
-            public override Match<T> Match(StringInput input)
+            protected override Match<T> MatchCore(StringInput input)
             {
                 return (input.Position >= input.Text.Length)
                            ? Match<T>.Empty(input.Position)

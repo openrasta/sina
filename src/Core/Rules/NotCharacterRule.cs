@@ -20,7 +20,7 @@ namespace OpenRasta.Sina.Rules
         }
 
 
-        public override Match<char> Match(StringInput input)
+        protected override Match<char> MatchCore(StringInput input)
         {
             if (input.Position >= input.Text.Length ||
                 _isForbisdden(input.Current))

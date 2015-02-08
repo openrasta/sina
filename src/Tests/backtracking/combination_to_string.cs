@@ -12,7 +12,7 @@ namespace Tests.backtracking
         {
             given_rule((AnyCharacter().Min(1)
                         + Character('a')).End());
-            when_matching("aa");
+            when_matching("aa", "aab");
         }
 
         [Fact]
@@ -20,6 +20,12 @@ namespace Tests.backtracking
         {
             result.ShouldMatch("aa", 0, 2);
             input.Position.ShouldEqual(2);
+        }
+
+        [Fact]
+        public void fails_restore_inputs()
+        {
+            inputs[1].Position.ShouldEqual(0);
         }
     }
 }

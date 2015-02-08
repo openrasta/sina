@@ -19,7 +19,7 @@ namespace OpenRasta.Sina.Rules
             return this;
         }
 
-        public override Match<string> Match(StringInput input)
+        protected override Match<string> MatchCore(StringInput input)
         {
 
             _comparison = StringComparison.OrdinalIgnoreCase;

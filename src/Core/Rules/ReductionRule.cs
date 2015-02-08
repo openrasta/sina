@@ -14,7 +14,7 @@ namespace OpenRasta.Sina.Rules
             _converter = converter;
         }
 
-        public override Match<TResult> Match(StringInput input)
+        protected override Match<TResult> MatchCore(StringInput input)
         {
             return Match(input.Position, input, _rule.Match);
         }

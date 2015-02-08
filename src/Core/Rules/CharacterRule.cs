@@ -31,7 +31,7 @@ namespace OpenRasta.Sina.Rules
             return new CharacterRule(character);
         }
 
-        public override Match<char> Match(StringInput input)
+        protected override Match<char> MatchCore(StringInput input)
         {
             if (input.Position >= input.Text.Length ||
                 input.Current != _character)

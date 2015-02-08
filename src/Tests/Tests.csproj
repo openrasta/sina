@@ -58,7 +58,7 @@
     <Compile Include="backtracking\optional_group.cs" />
     <Compile Include="backtracking\reduction.cs" />
     <Compile Include="cardinals\matches_max.cs" />
-    <Compile Include="cardinals\matches_min.cs" />
+    <Compile Include="cardinals\min.cs" />
     <Compile Include="characters\not.cs" />
     <Compile Include="characters\no_match_at_end.cs" />
     <Compile Include="backtracking\combination_with_conversion.cs" />
